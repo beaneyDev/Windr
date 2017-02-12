@@ -14,7 +14,7 @@ import RxCocoa
 
 protocol ChatBox: class  {
     func configureMessageBox()
-    func sendMessage(message: Message)
+    func sendMessage(socketID: Int, message: Message)
     func updateUIWithMessage(message: Message)
     
     var disposeBag: DisposeBag! { get set }
@@ -49,6 +49,9 @@ extension ChatBox where Self : TableListable {
             let indexpath = IndexPath(item: self.messages.count - 1, section: 0)
             self.tableView.insertRows(at: [indexpath], with: .automatic)
             self.tableView.endUpdates()
+            MBOn.delay(0.3, task: { 
+                self.tableView.scrollToRow(at: indexpath, at: UITableViewScrollPosition.bottom, animated: false)
+            })
         }
     }
 }

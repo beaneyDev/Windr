@@ -49,24 +49,29 @@ extension SocketIO where Self : WNotifiable {
 extension SocketIO where Self : ChatBox {
     func addHandlers() {
         socket?.on("message") {[weak self] data, ack in
-            guard let name = data[0] as? String, let message = data[1] as? String else { return }
-            self?.addIncomingMessage(name: name, message: message, socketID: 0)
+            guard let name = data[0] as? String, let message = data[1] as? String, let socketID: Int = data[2] as? Int else { return }
+            self?.addIncomingMessage(name: name, message: message, socketID: socketID)
+        }
+        
+        socket?.on("assignSocketID") { data, ack in
+            guard let socketID = data[0] as? Int else { return }
+            self.socketID = socketID
         }
     }
     
     func addIncomingMessage(name: String, message: String, socketID: Int) {
-        //guard let mySocketID = self.socketID else { return }
-        //TODO: Implement socket ID checking to determine position of the message.
-        let message = SpeechBubbleMessage(message: message, position: BubblePosition.left)
+        guard let mySocketID = self.socketID else { return }
+        let position: BubblePosition = mySocketID == socketID ? BubblePosition.left : BubblePosition.right
+        let message = SpeechBubbleMessage(message: message, position: position)
         self.messages.append(message)
         self.updateUIWithMessage(message: message)
     }
     
-    func sendMessage(message: Message) {
-        socket?.emit("sendMsg", self.socketID ?? 0, message.message ?? "Message failed to send")
+    func sendMessage(socketID: Int, message: Message) {
+        socket?.emit("sendMsg", socketID, message.message ?? "Message failed to send")
     }
     
     func userTyping(isTyping: Bool) {
-        socket?.emit("userTyping", self.socketID ?? 0, isTyping)
+        socket?.emit("userTyping", self.socketID!, isTyping)
     }
 }

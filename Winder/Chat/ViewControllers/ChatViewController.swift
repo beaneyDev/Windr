@@ -24,7 +24,11 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     var messages = [SpeechBubbleMessage]()
     var resetAck: SocketAckEmitter?
     var socket: SocketIOClient?
-    var socketID: Int?
+    var socketID: Int? {
+        didSet {
+            
+        }
+    }
     
     override func viewDidLoad() {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
@@ -38,16 +42,11 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
         configureKeyboardHiding()
     }
     
-    func hideLoadingLabelForCell(cell: SpeechBubbleView) {
-        cell.loadingLblHeight.constant = 0.0
-        cell.loadingLbl.alpha = 0.0
-    }
-    
     //MARK: ACTION HANDLING
     @IBAction func didTapSend(_ sender: Any) {
         guard let formFieldText = self.formField.text, !formFieldText.isEmpty else { return }
         let message = Message(message: formFieldText)
-        self.sendMessage(message: message)
+        self.sendMessage(socketID: self.socketID!, message: message)
         self.formField.text = ""
     }
     
