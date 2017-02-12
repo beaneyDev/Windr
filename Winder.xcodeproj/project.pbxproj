@@ -1,0 +1,882 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20B6329A8A56DF3FFA0BC668 /* Pods_Winder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85CB17CC05CAA7DAE61779B /* Pods_Winder.framework */; };
+		7F68A92668E9A639F0B5914D /* Pods_WinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972952604588335CC5A84512 /* Pods_WinderUITests.framework */; };
+		BE242B191E50AEF8008BD06C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B181E50AEF8008BD06C /* ChatViewController.swift */; };
+		BE242B1B1E50AEFE008BD06C /* SpeechBubbleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B1A1E50AEFE008BD06C /* SpeechBubbleMessage.swift */; };
+		BE242B1E1E50AF04008BD06C /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B1C1E50AF04008BD06C /* SpeechBubbleView.swift */; };
+		BE242B1F1E50AF04008BD06C /* SpeechBubbleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE242B1D1E50AF04008BD06C /* SpeechBubbleView.xib */; };
+		BE242B221E50B008008BD06C /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE242B211E50B008008BD06C /* Chat.storyboard */; };
+		BE242B251E50B0D3008BD06C /* SocketIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B241E50B0D3008BD06C /* SocketIO.swift */; };
+		BE242B271E50B23C008BD06C /* ChatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B261E50B23C008BD06C /* ChatBox.swift */; };
+		BE242B291E50BB9F008BD06C /* Listables.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B281E50BB9F008BD06C /* Listables.swift */; };
+		BE242B2D1E50BF6D008BD06C /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B2C1E50BF6D008BD06C /* SplashViewController.swift */; };
+		BE242B311E50BFD9008BD06C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE242B301E50BFD9008BD06C /* Main.storyboard */; };
+		BE242B391E50D49A008BD06C /* WNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B381E50D49A008BD06C /* WNotificationCenter.swift */; };
+		BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B3A1E50D4A9008BD06C /* WNotifiable.swift */; };
+		BE5AD72C1E5085510054709C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD72B1E5085510054709C /* AppDelegate.swift */; };
+		BE5AD7331E5085510054709C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7321E5085510054709C /* Assets.xcassets */; };
+		BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7341E5085510054709C /* LaunchScreen.storyboard */; };
+		BE5AD7411E5085510054709C /* WinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD7401E5085510054709C /* WinderTests.swift */; };
+		BE5AD74C1E5085510054709C /* WinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD74B1E5085510054709C /* WinderUITests.swift */; };
+		CEDC93058A34C2F95A51B8E4 /* Pods_WinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C767ED8684D239972AD891BA /* Pods_WinderTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BE5AD73D1E5085510054709C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE5AD7201E5085510054709C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE5AD7271E5085510054709C;
+			remoteInfo = Winder;
+		};
+		BE5AD7481E5085510054709C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE5AD7201E5085510054709C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BE5AD7271E5085510054709C;
+			remoteInfo = Winder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		293BE840BC11051C71B22C3B /* Pods-WinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinderTests/Pods-WinderTests.release.xcconfig"; sourceTree = "<group>"; };
+		413914F0CD8616CC29B4B715 /* Pods-WinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinderTests/Pods-WinderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		796008642438C7763BBE8D9E /* Pods-Winder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Winder/Pods-Winder.debug.xcconfig"; sourceTree = "<group>"; };
+		972952604588335CC5A84512 /* Pods_WinderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8F6A09B9C1D0F0658D2E8CA /* Pods-Winder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Winder/Pods-Winder.release.xcconfig"; sourceTree = "<group>"; };
+		ACBA10BFF908E5411C332FB6 /* Pods-WinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinderUITests/Pods-WinderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B5F04E21C38483AE4AEB3C1E /* Pods-WinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinderUITests/Pods-WinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE242B181E50AEF8008BD06C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		BE242B1A1E50AEFE008BD06C /* SpeechBubbleMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechBubbleMessage.swift; sourceTree = "<group>"; };
+		BE242B1C1E50AF04008BD06C /* SpeechBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
+		BE242B1D1E50AF04008BD06C /* SpeechBubbleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechBubbleView.xib; sourceTree = "<group>"; };
+		BE242B211E50B008008BD06C /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		BE242B241E50B0D3008BD06C /* SocketIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketIO.swift; sourceTree = "<group>"; };
+		BE242B261E50B23C008BD06C /* ChatBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatBox.swift; sourceTree = "<group>"; };
+		BE242B281E50BB9F008BD06C /* Listables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Listables.swift; sourceTree = "<group>"; };
+		BE242B2C1E50BF6D008BD06C /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		BE242B301E50BFD9008BD06C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BE242B381E50D49A008BD06C /* WNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNotificationCenter.swift; sourceTree = "<group>"; };
+		BE242B3A1E50D4A9008BD06C /* WNotifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNotifiable.swift; sourceTree = "<group>"; };
+		BE5AD7281E5085510054709C /* Winder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5AD72B1E5085510054709C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE5AD7321E5085510054709C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE5AD7351E5085510054709C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BE5AD7371E5085510054709C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5AD73C1E5085510054709C /* WinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5AD7401E5085510054709C /* WinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinderTests.swift; sourceTree = "<group>"; };
+		BE5AD7421E5085510054709C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE5AD7471E5085510054709C /* WinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE5AD74B1E5085510054709C /* WinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinderUITests.swift; sourceTree = "<group>"; };
+		BE5AD74D1E5085510054709C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C767ED8684D239972AD891BA /* Pods_WinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F85CB17CC05CAA7DAE61779B /* Pods_Winder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Winder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BE5AD7251E5085510054709C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B6329A8A56DF3FFA0BC668 /* Pods_Winder.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5AD7391E5085510054709C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEDC93058A34C2F95A51B8E4 /* Pods_WinderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5AD7441E5085510054709C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F68A92668E9A639F0B5914D /* Pods_WinderUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		796DB68FDB66C6E79E45BD66 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				796008642438C7763BBE8D9E /* Pods-Winder.debug.xcconfig */,
+				A8F6A09B9C1D0F0658D2E8CA /* Pods-Winder.release.xcconfig */,
+				413914F0CD8616CC29B4B715 /* Pods-WinderTests.debug.xcconfig */,
+				293BE840BC11051C71B22C3B /* Pods-WinderTests.release.xcconfig */,
+				B5F04E21C38483AE4AEB3C1E /* Pods-WinderUITests.debug.xcconfig */,
+				ACBA10BFF908E5411C332FB6 /* Pods-WinderUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE242B131E50AEE3008BD06C /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B231E50B0B0008BD06C /* Protocols */,
+				BE242B201E50AF95008BD06C /* Storyboards */,
+				BE242B171E50AEF1008BD06C /* ViewModels */,
+				BE242B161E50AEED008BD06C /* Models */,
+				BE242B151E50AEEA008BD06C /* Views */,
+				BE242B141E50AEE6008BD06C /* ViewControllers */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		BE242B141E50AEE6008BD06C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B181E50AEF8008BD06C /* ChatViewController.swift */,
+			);
+			name = ViewControllers;
+			path = Chat/ViewControllers;
+			sourceTree = "<group>";
+		};
+		BE242B151E50AEEA008BD06C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B1C1E50AF04008BD06C /* SpeechBubbleView.swift */,
+				BE242B1D1E50AF04008BD06C /* SpeechBubbleView.xib */,
+			);
+			name = Views;
+			path = Chat/Views;
+			sourceTree = "<group>";
+		};
+		BE242B161E50AEED008BD06C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B1A1E50AEFE008BD06C /* SpeechBubbleMessage.swift */,
+			);
+			name = Models;
+			path = Chat/Model;
+			sourceTree = "<group>";
+		};
+		BE242B171E50AEF1008BD06C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModels;
+			path = Chat/ViewModels;
+			sourceTree = "<group>";
+		};
+		BE242B201E50AF95008BD06C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B211E50B008008BD06C /* Chat.storyboard */,
+			);
+			name = Storyboards;
+			path = Chat/Storyboards;
+			sourceTree = "<group>";
+		};
+		BE242B231E50B0B0008BD06C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B241E50B0D3008BD06C /* SocketIO.swift */,
+				BE242B261E50B23C008BD06C /* ChatBox.swift */,
+				BE242B281E50BB9F008BD06C /* Listables.swift */,
+			);
+			name = Protocols;
+			path = Chat/Protocols;
+			sourceTree = "<group>";
+		};
+		BE242B2A1E50BF3C008BD06C /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B2E1E50BF8C008BD06C /* Storyboards */,
+				BE242B2B1E50BF5B008BD06C /* ViewControllers */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		BE242B2B1E50BF5B008BD06C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B2C1E50BF6D008BD06C /* SplashViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BE242B2E1E50BF8C008BD06C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B301E50BFD9008BD06C /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BE242B321E50D412008BD06C /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B371E50D469008BD06C /* Controllers */,
+				BE242B361E50D466008BD06C /* Model */,
+				BE242B351E50D461008BD06C /* Protocols */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		BE242B351E50D461008BD06C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B3A1E50D4A9008BD06C /* WNotifiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		BE242B361E50D466008BD06C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE242B371E50D469008BD06C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B381E50D49A008BD06C /* WNotificationCenter.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE5AD71F1E5085510054709C = {
+			isa = PBXGroup;
+			children = (
+				BE5AD72A1E5085510054709C /* Winder */,
+				BE5AD73F1E5085510054709C /* WinderTests */,
+				BE5AD74A1E5085510054709C /* WinderUITests */,
+				BE5AD7291E5085510054709C /* Products */,
+				796DB68FDB66C6E79E45BD66 /* Pods */,
+				F9A97E90EECF3B30BDB58ED3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BE5AD7291E5085510054709C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BE5AD7281E5085510054709C /* Winder.app */,
+				BE5AD73C1E5085510054709C /* WinderTests.xctest */,
+				BE5AD7471E5085510054709C /* WinderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BE5AD72A1E5085510054709C /* Winder */ = {
+			isa = PBXGroup;
+			children = (
+				BE242B321E50D412008BD06C /* Notifications */,
+				BE242B2A1E50BF3C008BD06C /* Launch */,
+				BE242B131E50AEE3008BD06C /* Chat */,
+				BE5AD72B1E5085510054709C /* AppDelegate.swift */,
+				BE5AD7321E5085510054709C /* Assets.xcassets */,
+				BE5AD7341E5085510054709C /* LaunchScreen.storyboard */,
+				BE5AD7371E5085510054709C /* Info.plist */,
+			);
+			path = Winder;
+			sourceTree = "<group>";
+		};
+		BE5AD73F1E5085510054709C /* WinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				BE5AD7401E5085510054709C /* WinderTests.swift */,
+				BE5AD7421E5085510054709C /* Info.plist */,
+			);
+			path = WinderTests;
+			sourceTree = "<group>";
+		};
+		BE5AD74A1E5085510054709C /* WinderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BE5AD74B1E5085510054709C /* WinderUITests.swift */,
+				BE5AD74D1E5085510054709C /* Info.plist */,
+			);
+			path = WinderUITests;
+			sourceTree = "<group>";
+		};
+		F9A97E90EECF3B30BDB58ED3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F85CB17CC05CAA7DAE61779B /* Pods_Winder.framework */,
+				C767ED8684D239972AD891BA /* Pods_WinderTests.framework */,
+				972952604588335CC5A84512 /* Pods_WinderUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BE5AD7271E5085510054709C /* Winder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE5AD7501E5085510054709C /* Build configuration list for PBXNativeTarget "Winder" */;
+			buildPhases = (
+				E1167812167DE56140AC713D /* [CP] Check Pods Manifest.lock */,
+				BE5AD7241E5085510054709C /* Sources */,
+				BE5AD7251E5085510054709C /* Frameworks */,
+				BE5AD7261E5085510054709C /* Resources */,
+				E63311593F9B37FC436293FA /* [CP] Embed Pods Frameworks */,
+				C7D931F31689A470F9762867 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Winder;
+			productName = Winder;
+			productReference = BE5AD7281E5085510054709C /* Winder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BE5AD73B1E5085510054709C /* WinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE5AD7531E5085510054709C /* Build configuration list for PBXNativeTarget "WinderTests" */;
+			buildPhases = (
+				5D8F17084AA83B7DA3A46340 /* [CP] Check Pods Manifest.lock */,
+				BE5AD7381E5085510054709C /* Sources */,
+				BE5AD7391E5085510054709C /* Frameworks */,
+				BE5AD73A1E5085510054709C /* Resources */,
+				74C1A677BB08FC22005C97AF /* [CP] Embed Pods Frameworks */,
+				F131E4D1C6B42FA6A8C03565 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE5AD73E1E5085510054709C /* PBXTargetDependency */,
+			);
+			name = WinderTests;
+			productName = WinderTests;
+			productReference = BE5AD73C1E5085510054709C /* WinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BE5AD7461E5085510054709C /* WinderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE5AD7561E5085510054709C /* Build configuration list for PBXNativeTarget "WinderUITests" */;
+			buildPhases = (
+				98DA5EA57EF0CEA71B9FD780 /* [CP] Check Pods Manifest.lock */,
+				BE5AD7431E5085510054709C /* Sources */,
+				BE5AD7441E5085510054709C /* Frameworks */,
+				BE5AD7451E5085510054709C /* Resources */,
+				B6BB0BECF7486B350F915F48 /* [CP] Embed Pods Frameworks */,
+				C6EEA09CFCEBF94BC822BC0E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BE5AD7491E5085510054709C /* PBXTargetDependency */,
+			);
+			name = WinderUITests;
+			productName = WinderUITests;
+			productReference = BE5AD7471E5085510054709C /* WinderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BE5AD7201E5085510054709C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Matt Beaney";
+				TargetAttributes = {
+					BE5AD7271E5085510054709C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U5FH5JR68H;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+					BE5AD73B1E5085510054709C = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE5AD7271E5085510054709C;
+					};
+					BE5AD7461E5085510054709C = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BE5AD7271E5085510054709C;
+					};
+				};
+			};
+			buildConfigurationList = BE5AD7231E5085510054709C /* Build configuration list for PBXProject "Winder" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BE5AD71F1E5085510054709C;
+			productRefGroup = BE5AD7291E5085510054709C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE5AD7271E5085510054709C /* Winder */,
+				BE5AD73B1E5085510054709C /* WinderTests */,
+				BE5AD7461E5085510054709C /* WinderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE5AD7261E5085510054709C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE242B1F1E50AF04008BD06C /* SpeechBubbleView.xib in Resources */,
+				BE242B311E50BFD9008BD06C /* Main.storyboard in Resources */,
+				BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */,
+				BE5AD7331E5085510054709C /* Assets.xcassets in Resources */,
+				BE242B221E50B008008BD06C /* Chat.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5AD73A1E5085510054709C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5AD7451E5085510054709C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D8F17084AA83B7DA3A46340 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		74C1A677BB08FC22005C97AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinderTests/Pods-WinderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98DA5EA57EF0CEA71B9FD780 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6BB0BECF7486B350F915F48 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinderUITests/Pods-WinderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6EEA09CFCEBF94BC822BC0E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinderUITests/Pods-WinderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7D931F31689A470F9762867 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Winder/Pods-Winder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1167812167DE56140AC713D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E63311593F9B37FC436293FA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Winder/Pods-Winder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F131E4D1C6B42FA6A8C03565 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinderTests/Pods-WinderTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BE5AD7241E5085510054709C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE242B1E1E50AF04008BD06C /* SpeechBubbleView.swift in Sources */,
+				BE242B251E50B0D3008BD06C /* SocketIO.swift in Sources */,
+				BE242B191E50AEF8008BD06C /* ChatViewController.swift in Sources */,
+				BE242B391E50D49A008BD06C /* WNotificationCenter.swift in Sources */,
+				BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */,
+				BE242B1B1E50AEFE008BD06C /* SpeechBubbleMessage.swift in Sources */,
+				BE242B291E50BB9F008BD06C /* Listables.swift in Sources */,
+				BE5AD72C1E5085510054709C /* AppDelegate.swift in Sources */,
+				BE242B271E50B23C008BD06C /* ChatBox.swift in Sources */,
+				BE242B2D1E50BF6D008BD06C /* SplashViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5AD7381E5085510054709C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5AD7411E5085510054709C /* WinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BE5AD7431E5085510054709C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE5AD74C1E5085510054709C /* WinderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BE5AD73E1E5085510054709C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE5AD7271E5085510054709C /* Winder */;
+			targetProxy = BE5AD73D1E5085510054709C /* PBXContainerItemProxy */;
+		};
+		BE5AD7491E5085510054709C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BE5AD7271E5085510054709C /* Winder */;
+			targetProxy = BE5AD7481E5085510054709C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BE5AD7341E5085510054709C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BE5AD7351E5085510054709C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BE5AD74E1E5085510054709C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BE5AD74F1E5085510054709C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BE5AD7511E5085510054709C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 796008642438C7763BBE8D9E /* Pods-Winder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U5FH5JR68H;
+				INFOPLIST_FILE = Winder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.Winder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BE5AD7521E5085510054709C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8F6A09B9C1D0F0658D2E8CA /* Pods-Winder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U5FH5JR68H;
+				INFOPLIST_FILE = Winder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.Winder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		BE5AD7541E5085510054709C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 413914F0CD8616CC29B4B715 /* Pods-WinderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.WinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Winder.app/Winder";
+			};
+			name = Debug;
+		};
+		BE5AD7551E5085510054709C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 293BE840BC11051C71B22C3B /* Pods-WinderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = WinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.WinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Winder.app/Winder";
+			};
+			name = Release;
+		};
+		BE5AD7571E5085510054709C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5F04E21C38483AE4AEB3C1E /* Pods-WinderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = WinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.WinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Winder;
+			};
+			name = Debug;
+		};
+		BE5AD7581E5085510054709C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACBA10BFF908E5411C332FB6 /* Pods-WinderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = WinderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.WinderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Winder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BE5AD7231E5085510054709C /* Build configuration list for PBXProject "Winder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5AD74E1E5085510054709C /* Debug */,
+				BE5AD74F1E5085510054709C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE5AD7501E5085510054709C /* Build configuration list for PBXNativeTarget "Winder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5AD7511E5085510054709C /* Debug */,
+				BE5AD7521E5085510054709C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE5AD7531E5085510054709C /* Build configuration list for PBXNativeTarget "WinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5AD7541E5085510054709C /* Debug */,
+				BE5AD7551E5085510054709C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BE5AD7561E5085510054709C /* Build configuration list for PBXNativeTarget "WinderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5AD7571E5085510054709C /* Debug */,
+				BE5AD7581E5085510054709C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BE5AD7201E5085510054709C /* Project object */;
+}
