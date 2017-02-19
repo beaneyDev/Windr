@@ -11,14 +11,13 @@ import SocketIO
 
 protocol SocketIO: class {
     var resetAck: SocketAckEmitter? { get set }
-    var socket: SocketIOClient? { get set }
+    var socket: Socketable? { get set }
     var socketID: Int? { get set }
     func configureSocket()
-    func configureTerminationObserver()
     func addHandlers()
 }
 
-extension SocketIO {
+extension SocketIO where Self : WNotifiable {
     func configureSocket() {
         #if (arch(i386) || arch(x86_64))
             self.socket = SocketIOClient(socketURL: NSURL(string:"http://localhost:8900")! as URL)
@@ -32,9 +31,7 @@ extension SocketIO {
         
         configureTerminationObserver()
     }
-}
-
-extension SocketIO where Self : WNotifiable {
+    
     func configureTerminationObserver() {
         WNotificationCenter.shared.subscribe(eventType: EventType.didEnterBackground, notifiable: self)
     }
@@ -75,3 +72,15 @@ extension SocketIO where Self : ChatBox {
         socket?.emit("userTyping", self.socketID!, isTyping)
     }
 }
+
+//Used for testing. (SocketIOClient is final so cannot be mocked).
+protocol Socketable {
+    func emit(_ event: String, _ items: SocketData...)
+    func connect()
+    func disconnect()
+    
+    @discardableResult
+    func on(_ event: String, callback: @escaping NormalCallback) -> UUID
+}
+
+extension SocketIOClient: Socketable { }

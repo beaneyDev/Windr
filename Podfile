@@ -8,8 +8,11 @@ target 'Winder' do
   # Pods for Winder
   pod 'Socket.IO-Client-Swift'
   pod 'MBUtils'
-  pod "RxSwift"
-  pod "RxCocoa"
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'FacebookShare'
 
   target 'WinderTests' do
     inherit! :search_paths

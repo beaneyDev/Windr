@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20B6329A8A56DF3FFA0BC668 /* Pods_Winder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F85CB17CC05CAA7DAE61779B /* Pods_Winder.framework */; };
 		7F68A92668E9A639F0B5914D /* Pods_WinderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 972952604588335CC5A84512 /* Pods_WinderUITests.framework */; };
+		BE0D5F761E525E1200CC14E2 /* WPulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0D5F751E525E1200CC14E2 /* WPulseView.swift */; };
 		BE242B191E50AEF8008BD06C /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B181E50AEF8008BD06C /* ChatViewController.swift */; };
 		BE242B1B1E50AEFE008BD06C /* SpeechBubbleMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B1A1E50AEFE008BD06C /* SpeechBubbleMessage.swift */; };
 		BE242B1E1E50AF04008BD06C /* SpeechBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B1C1E50AF04008BD06C /* SpeechBubbleView.swift */; };
@@ -21,6 +22,9 @@
 		BE242B311E50BFD9008BD06C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE242B301E50BFD9008BD06C /* Main.storyboard */; };
 		BE242B391E50D49A008BD06C /* WNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B381E50D49A008BD06C /* WNotificationCenter.swift */; };
 		BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B3A1E50D4A9008BD06C /* WNotifiable.swift */; };
+		BE52CDA91E59D1570086A533 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52CDA81E59D1570086A533 /* LoginViewController.swift */; };
+		BE52CDAC1E59D17D0086A533 /* Social.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52CDAB1E59D17D0086A533 /* Social.storyboard */; };
+		BE52CDB21E59D3F50086A533 /* ChatboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52CDB11E59D3F50086A533 /* ChatboxTests.swift */; };
 		BE5AD72C1E5085510054709C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD72B1E5085510054709C /* AppDelegate.swift */; };
 		BE5AD7331E5085510054709C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7321E5085510054709C /* Assets.xcassets */; };
 		BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7341E5085510054709C /* LaunchScreen.storyboard */; };
@@ -54,6 +58,7 @@
 		A8F6A09B9C1D0F0658D2E8CA /* Pods-Winder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Winder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Winder/Pods-Winder.release.xcconfig"; sourceTree = "<group>"; };
 		ACBA10BFF908E5411C332FB6 /* Pods-WinderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinderUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WinderUITests/Pods-WinderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B5F04E21C38483AE4AEB3C1E /* Pods-WinderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WinderUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WinderUITests/Pods-WinderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BE0D5F751E525E1200CC14E2 /* WPulseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPulseView.swift; sourceTree = "<group>"; };
 		BE242B181E50AEF8008BD06C /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		BE242B1A1E50AEFE008BD06C /* SpeechBubbleMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechBubbleMessage.swift; sourceTree = "<group>"; };
 		BE242B1C1E50AF04008BD06C /* SpeechBubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechBubbleView.swift; sourceTree = "<group>"; };
@@ -66,6 +71,9 @@
 		BE242B301E50BFD9008BD06C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BE242B381E50D49A008BD06C /* WNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNotificationCenter.swift; sourceTree = "<group>"; };
 		BE242B3A1E50D4A9008BD06C /* WNotifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNotifiable.swift; sourceTree = "<group>"; };
+		BE52CDA81E59D1570086A533 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BE52CDAB1E59D17D0086A533 /* Social.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
+		BE52CDB11E59D3F50086A533 /* ChatboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatboxTests.swift; sourceTree = "<group>"; };
 		BE5AD7281E5085510054709C /* Winder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5AD72B1E5085510054709C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5AD7321E5085510054709C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +128,14 @@
 				ACBA10BFF908E5411C332FB6 /* Pods-WinderUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE0D5F741E525DF500CC14E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE0D5F751E525E1200CC14E2 /* WPulseView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BE242B131E50AEE3008BD06C /* Chat */ = {
@@ -194,6 +210,7 @@
 		BE242B2A1E50BF3C008BD06C /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				BE0D5F741E525DF500CC14E2 /* Views */,
 				BE242B2E1E50BF8C008BD06C /* Storyboards */,
 				BE242B2B1E50BF5B008BD06C /* ViewControllers */,
 			);
@@ -249,6 +266,92 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		BE52CDA21E59D0CB0086A533 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				BE52CDAA1E59D15A0086A533 /* Storyboards */,
+				BE52CDA71E59D10A0086A533 /* Views */,
+				BE52CDA61E59D0F90086A533 /* ViewControllers */,
+				BE52CDA51E59D0F20086A533 /* Models */,
+				BE52CDA41E59D0EE0086A533 /* ViewModels */,
+				BE52CDA31E59D0EA0086A533 /* Controllers */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		BE52CDA31E59D0EA0086A533 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE52CDA41E59D0EE0086A533 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BE52CDA51E59D0F20086A533 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE52CDA61E59D0F90086A533 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE52CDA81E59D1570086A533 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BE52CDA71E59D10A0086A533 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE52CDAA1E59D15A0086A533 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BE52CDAB1E59D17D0086A533 /* Social.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BE52CDAD1E59D3B30086A533 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		BE52CDAE1E59D3B70086A533 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		BE52CDAF1E59D3BA0086A533 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		BE52CDB01E59D3BF0086A533 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				BE52CDB11E59D3F50086A533 /* ChatboxTests.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		BE5AD71F1E5085510054709C = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +377,7 @@
 		BE5AD72A1E5085510054709C /* Winder */ = {
 			isa = PBXGroup;
 			children = (
+				BE52CDA21E59D0CB0086A533 /* Social */,
 				BE242B321E50D412008BD06C /* Notifications */,
 				BE242B2A1E50BF3C008BD06C /* Launch */,
 				BE242B131E50AEE3008BD06C /* Chat */,
@@ -288,6 +392,10 @@
 		BE5AD73F1E5085510054709C /* WinderTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE52CDB01E59D3BF0086A533 /* Chat */,
+				BE52CDAF1E59D3BA0086A533 /* Launch */,
+				BE52CDAE1E59D3B70086A533 /* Notifications */,
+				BE52CDAD1E59D3B30086A533 /* Social */,
 				BE5AD7401E5085510054709C /* WinderTests.swift */,
 				BE5AD7421E5085510054709C /* Info.plist */,
 			);
@@ -438,6 +546,7 @@
 				BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */,
 				BE5AD7331E5085510054709C /* Assets.xcassets in Resources */,
 				BE242B221E50B008008BD06C /* Chat.storyboard in Resources */,
+				BE52CDAC1E59D17D0086A533 /* Social.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,10 +709,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE52CDA91E59D1570086A533 /* LoginViewController.swift in Sources */,
 				BE242B1E1E50AF04008BD06C /* SpeechBubbleView.swift in Sources */,
 				BE242B251E50B0D3008BD06C /* SocketIO.swift in Sources */,
 				BE242B191E50AEF8008BD06C /* ChatViewController.swift in Sources */,
 				BE242B391E50D49A008BD06C /* WNotificationCenter.swift in Sources */,
+				BE0D5F761E525E1200CC14E2 /* WPulseView.swift in Sources */,
 				BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */,
 				BE242B1B1E50AEFE008BD06C /* SpeechBubbleMessage.swift in Sources */,
 				BE242B291E50BB9F008BD06C /* Listables.swift in Sources */,
@@ -618,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE5AD7411E5085510054709C /* WinderTests.swift in Sources */,
+				BE52CDB21E59D3F50086A533 /* ChatboxTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

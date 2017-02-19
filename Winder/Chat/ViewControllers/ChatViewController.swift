@@ -23,7 +23,7 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     
     var messages = [SpeechBubbleMessage]()
     var resetAck: SocketAckEmitter?
-    var socket: SocketIOClient?
+    var socket: Socketable?
     var socketID: Int? {
         didSet {
             

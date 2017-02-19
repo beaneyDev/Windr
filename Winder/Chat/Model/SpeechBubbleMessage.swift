@@ -15,6 +15,7 @@ enum BubblePosition: String {
 
 class Message: NSObject {
     var message: String?
+    
     init(message: String) {
         self.message = message
     }

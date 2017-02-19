@@ -10,7 +10,24 @@ import Foundation
 import UIKit
 
 class SplashViewController: UIViewController {
+    
+    
+    @IBOutlet weak var pulse: WPulseView!
+    @IBOutlet weak var pulseHeight: NSLayoutConstraint!
+    @IBOutlet weak var pulseWidth: NSLayoutConstraint!
+    
     override func viewDidLoad() {
-        self.performSegue(withIdentifier: "moveOn", sender: nil)
+        pulse.configure(iterations: 2)
+        pulse.pulse {            
+            UIView.animate(withDuration: 0.5, animations: { 
+                let centerPoint = self.pulse.center
+                let center = CGPoint(x: self.pulse.frame.size.width / 2.0 + 10.0, y: self.pulse.frame.size.height / 2.0 + 10.0)
+                let move = CGAffineTransform(translationX: center.x - centerPoint.x, y: center.y - centerPoint.y)
+                let scale = move.scaledBy(x: 0.5, y: 0.5)
+                self.pulse.transform = scale
+            }, completion: { (finished) in
+                self.performSegue(withIdentifier: "moveOn", sender: nil)
+            })
+        }
     }
 }

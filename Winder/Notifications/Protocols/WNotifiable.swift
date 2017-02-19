@@ -10,6 +10,7 @@ import Foundation
 
 protocol WNotifiable {
     func notify(eventType: EventType, userInfo: [String: Any]?)
+    func configureTerminationObserver()
 }
 
 enum EventType: String {
