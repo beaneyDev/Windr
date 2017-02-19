@@ -24,14 +24,9 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     var messages = [SpeechBubbleMessage]()
     var resetAck: SocketAckEmitter?
     var socket: Socketable?
-    var socketID: Int? {
-        didSet {
-            
-        }
-    }
+    var socketID: Int?
     
     override func viewDidLoad() {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
         self.navigationItem.hidesBackButton = true
         

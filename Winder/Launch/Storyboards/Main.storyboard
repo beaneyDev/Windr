@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2h-jy-XwA" customClass="WPulseView" customModule="Winder" customModuleProvider="target">
-                                <rect key="frame" x="117" y="263" width="140" height="140"/>
+                                <rect key="frame" x="117.5" y="263.5" width="140" height="140"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="140" id="4uT-UF-qTc"/>
@@ -41,7 +41,8 @@
                         <outlet property="pulse" destination="U2h-jy-XwA" id="wxh-bY-BCT"/>
                         <outlet property="pulseHeight" destination="Pb7-Xn-rBT" id="OsH-Le-ocC"/>
                         <outlet property="pulseWidth" destination="4uT-UF-qTc" id="kfY-hB-9bi"/>
-                        <segue destination="tDv-zj-Npf" kind="show" identifier="moveOn" id="gbL-oJ-7XF"/>
+                        <segue destination="tDv-zj-Npf" kind="show" identifier="loggedIn" id="gbL-oJ-7XF"/>
+                        <segue destination="TXe-8D-rMs" kind="show" identifier="notLoggedIn" id="5nn-ct-6Ng"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -51,10 +52,18 @@
         <!--Chat-->
         <scene sceneID="lJv-73-gvn">
             <objects>
-                <viewControllerPlaceholder storyboardName="Chat" id="tDv-zj-Npf" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eai-Gz-YEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Chat" id="tDv-zj-Npf" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-738.39999999999998" y="97.151424287856074"/>
+        </scene>
+        <!--Social-->
+        <scene sceneID="ar1-I4-tLt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Social" id="TXe-8D-rMs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qms-9n-agb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-738" y="171"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dXF-EW-DMx">

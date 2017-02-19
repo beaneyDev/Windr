@@ -20,11 +20,11 @@ protocol SocketIO: class {
 extension SocketIO where Self : WNotifiable {
     func configureSocket() {
         #if (arch(i386) || arch(x86_64))
-            self.socket = SocketIOClient(socketURL: NSURL(string:"http://localhost:8900")! as URL)
+            self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
             addHandlers()
             socket!.connect()
         #else
-            self.socket = SocketIOClient(socketURL: NSURL(string:"http://192.168.0.62:8900")! as URL)
+            self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
             addHandlers()
             socket!.connect()
         #endif

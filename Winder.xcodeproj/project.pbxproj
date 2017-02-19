@@ -25,6 +25,7 @@
 		BE52CDA91E59D1570086A533 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52CDA81E59D1570086A533 /* LoginViewController.swift */; };
 		BE52CDAC1E59D17D0086A533 /* Social.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52CDAB1E59D17D0086A533 /* Social.storyboard */; };
 		BE52CDB21E59D3F50086A533 /* ChatboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52CDB11E59D3F50086A533 /* ChatboxTests.swift */; };
+		BE52CDB81E59F0990086A533 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52CDB71E59F0990086A533 /* User.swift */; };
 		BE5AD72C1E5085510054709C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD72B1E5085510054709C /* AppDelegate.swift */; };
 		BE5AD7331E5085510054709C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7321E5085510054709C /* Assets.xcassets */; };
 		BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7341E5085510054709C /* LaunchScreen.storyboard */; };
@@ -74,6 +75,7 @@
 		BE52CDA81E59D1570086A533 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE52CDAB1E59D17D0086A533 /* Social.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
 		BE52CDB11E59D3F50086A533 /* ChatboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatboxTests.swift; sourceTree = "<group>"; };
+		BE52CDB71E59F0990086A533 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE5AD7281E5085510054709C /* Winder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Winder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5AD72B1E5085510054709C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE5AD7321E5085510054709C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		BE52CDA51E59D0F20086A533 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BE52CDB71E59F0990086A533 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE52CDB81E59F0990086A533 /* User.swift in Sources */,
 				BE52CDA91E59D1570086A533 /* LoginViewController.swift in Sources */,
 				BE242B1E1E50AF04008BD06C /* SpeechBubbleView.swift in Sources */,
 				BE242B251E50B0D3008BD06C /* SocketIO.swift in Sources */,
@@ -870,7 +874,7 @@
 				INFOPLIST_FILE = Winder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.Winder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beaney.winder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -885,7 +889,7 @@
 				INFOPLIST_FILE = Winder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pagesuite.Winder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beaney.winder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

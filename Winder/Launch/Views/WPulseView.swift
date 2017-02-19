@@ -53,7 +53,6 @@ extension Pulses where Self: UIView {
 }
 
 class WPulseView: UIView, Pulses {
-    
     var pulseIterations: Int = 0
     var pulseIndex: Int = 0
     var pulseViewWidth: NSLayoutConstraint!

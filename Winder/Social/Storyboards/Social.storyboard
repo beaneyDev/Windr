@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TGg-aL-HMr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="TX3-80-Rj8">
             <objects>
-                <viewController id="TGg-aL-HMr" sceneMemberID="viewController">
+                <viewController id="TGg-aL-HMr" customClass="LoginViewController" customModule="Winder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="59g-jR-2Fy"/>
                         <viewControllerLayoutGuide type="bottom" id="f3B-pi-jIW"/>
@@ -55,15 +55,30 @@
                                     <constraint firstAttribute="height" constant="52" id="fkA-iV-QPC"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Up9-Z1-EfR">
+                                <rect key="frame" x="16" y="239" width="343" height="42"/>
+                                <color key="backgroundColor" red="0.1764705882" green="0.49803921569999998" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="FAV-gN-3yr"/>
+                                </constraints>
+                                <state key="normal" title="Login With Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithFB:" destination="TGg-aL-HMr" eventType="touchUpInside" id="ZqA-9T-bNC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="waU-RL-HvC" firstAttribute="leading" secondItem="j8e-62-dJ5" secondAttribute="leadingMargin" id="0kJ-V0-Gen"/>
                             <constraint firstItem="CXI-4O-j8X" firstAttribute="top" secondItem="waU-RL-HvC" secondAttribute="bottom" constant="8" id="8pD-yn-fB8"/>
+                            <constraint firstItem="Up9-Z1-EfR" firstAttribute="leading" secondItem="j8e-62-dJ5" secondAttribute="leadingMargin" id="A6R-en-WCa"/>
                             <constraint firstItem="prl-5z-UXq" firstAttribute="trailing" secondItem="j8e-62-dJ5" secondAttribute="trailingMargin" id="AJi-RB-iMk"/>
                             <constraint firstItem="pro-B1-4Sd" firstAttribute="top" secondItem="prl-5z-UXq" secondAttribute="bottom" constant="7" id="LAa-5V-EpF"/>
                             <constraint firstItem="waU-RL-HvC" firstAttribute="trailing" secondItem="j8e-62-dJ5" secondAttribute="trailingMargin" id="NtN-Kr-Y3D"/>
                             <constraint firstItem="CXI-4O-j8X" firstAttribute="leading" secondItem="j8e-62-dJ5" secondAttribute="leadingMargin" id="R7L-Pf-Utl"/>
+                            <constraint firstItem="Up9-Z1-EfR" firstAttribute="trailing" secondItem="j8e-62-dJ5" secondAttribute="trailingMargin" id="RUp-vL-lfx"/>
                             <constraint firstItem="b43-JU-PiN" firstAttribute="leading" secondItem="j8e-62-dJ5" secondAttribute="leadingMargin" id="cfu-LX-drd"/>
                             <constraint firstItem="pro-B1-4Sd" firstAttribute="leading" secondItem="j8e-62-dJ5" secondAttribute="leadingMargin" id="igG-Il-Td5"/>
                             <constraint firstItem="CXI-4O-j8X" firstAttribute="trailing" secondItem="j8e-62-dJ5" secondAttribute="trailingMargin" id="jPI-6W-46h"/>
@@ -71,13 +86,25 @@
                             <constraint firstItem="prl-5z-UXq" firstAttribute="leading" secondItem="j8e-62-dJ5" secondAttribute="leadingMargin" id="lh2-dm-BMy"/>
                             <constraint firstItem="b43-JU-PiN" firstAttribute="top" secondItem="59g-jR-2Fy" secondAttribute="bottom" id="mm3-hj-j51"/>
                             <constraint firstItem="waU-RL-HvC" firstAttribute="top" secondItem="b43-JU-PiN" secondAttribute="bottom" constant="8" id="sUe-B5-XVO"/>
+                            <constraint firstItem="Up9-Z1-EfR" firstAttribute="top" secondItem="pro-B1-4Sd" secondAttribute="bottom" constant="5" id="vp9-Tv-xh4"/>
                             <constraint firstItem="prl-5z-UXq" firstAttribute="top" secondItem="CXI-4O-j8X" secondAttribute="bottom" constant="8" id="xKU-qs-GWU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="PtW-iB-G1q" kind="show" identifier="chat" id="hgA-5s-oZR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="99M-TF-upX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="280.80000000000001" y="-99.400299850074973"/>
+            <point key="canvasLocation" x="248.80000000000001" y="-334.18290854572717"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="ShZ-7S-Xaa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="PtW-iB-G1q" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MAs-D4-UVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813" y="-344"/>
         </scene>
     </scenes>
 </document>
