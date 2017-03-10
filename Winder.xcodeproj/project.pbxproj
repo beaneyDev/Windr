@@ -31,6 +31,12 @@
 		BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7341E5085510054709C /* LaunchScreen.storyboard */; };
 		BE5AD7411E5085510054709C /* WinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD7401E5085510054709C /* WinderTests.swift */; };
 		BE5AD74C1E5085510054709C /* WinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD74B1E5085510054709C /* WinderUITests.swift */; };
+		BEB6EB931E733A9200B59653 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB921E733A9200B59653 /* RealmController.swift */; };
+		BEB6EB951E733EA700B59653 /* FacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB941E733EA700B59653 /* FacebookController.swift */; };
+		BEB6EB991E7342D600B59653 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB981E7342D600B59653 /* FadeAnimator.swift */; };
+		BEB6EB9C1E73439500B59653 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB9B1E73439500B59653 /* NavigationControllerDelegate.swift */; };
+		BEB6EB9F1E7345D400B59653 /* Windicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB9E1E7345D400B59653 /* Windicon.swift */; };
+		BEB6EBA31E7362ED00B59653 /* PrequelDemo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEB6EBA21E7362ED00B59653 /* PrequelDemo-Regular.ttf */; };
 		CEDC93058A34C2F95A51B8E4 /* Pods_WinderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C767ED8684D239972AD891BA /* Pods_WinderTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +93,12 @@
 		BE5AD7471E5085510054709C /* WinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5AD74B1E5085510054709C /* WinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinderUITests.swift; sourceTree = "<group>"; };
 		BE5AD74D1E5085510054709C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEB6EB921E733A9200B59653 /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
+		BEB6EB941E733EA700B59653 /* FacebookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookController.swift; sourceTree = "<group>"; };
+		BEB6EB981E7342D600B59653 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
+		BEB6EB9B1E73439500B59653 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		BEB6EB9E1E7345D400B59653 /* Windicon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windicon.swift; sourceTree = "<group>"; };
+		BEB6EBA21E7362ED00B59653 /* PrequelDemo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PrequelDemo-Regular.ttf"; sourceTree = "<group>"; };
 		C767ED8684D239972AD891BA /* Pods_WinderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WinderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F85CB17CC05CAA7DAE61779B /* Pods_Winder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Winder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -284,6 +296,7 @@
 		BE52CDA31E59D0EA0086A533 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEB6EB941E733EA700B59653 /* FacebookController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -380,6 +393,9 @@
 		BE5AD72A1E5085510054709C /* Winder */ = {
 			isa = PBXGroup;
 			children = (
+				BEB6EBA01E7362BC00B59653 /* Assets */,
+				BEB6EB961E7342A900B59653 /* Navigation */,
+				BEB6EB911E733A5700B59653 /* Persistence */,
 				BE52CDA21E59D0CB0086A533 /* Social */,
 				BE242B321E50D412008BD06C /* Notifications */,
 				BE242B2A1E50BF3C008BD06C /* Launch */,
@@ -412,6 +428,64 @@
 				BE5AD74D1E5085510054709C /* Info.plist */,
 			);
 			path = WinderUITests;
+			sourceTree = "<group>";
+		};
+		BEB6EB911E733A5700B59653 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6EB921E733A9200B59653 /* RealmController.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		BEB6EB961E7342A900B59653 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6EB9D1E7345BC00B59653 /* Views */,
+				BEB6EB9A1E73437E00B59653 /* Delegates */,
+				BEB6EB971E7342BA00B59653 /* Custom Segues */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		BEB6EB971E7342BA00B59653 /* Custom Segues */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6EB981E7342D600B59653 /* FadeAnimator.swift */,
+			);
+			path = "Custom Segues";
+			sourceTree = "<group>";
+		};
+		BEB6EB9A1E73437E00B59653 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6EB9B1E73439500B59653 /* NavigationControllerDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		BEB6EB9D1E7345BC00B59653 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6EB9E1E7345D400B59653 /* Windicon.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BEB6EBA01E7362BC00B59653 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6EBA11E7362CF00B59653 /* Fonts */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		BEB6EBA11E7362CF00B59653 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BEB6EBA21E7362ED00B59653 /* PrequelDemo-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F9A97E90EECF3B30BDB58ED3 /* Frameworks */ = {
@@ -544,6 +618,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEB6EBA31E7362ED00B59653 /* PrequelDemo-Regular.ttf in Resources */,
 				BE242B1F1E50AF04008BD06C /* SpeechBubbleView.xib in Resources */,
 				BE242B311E50BFD9008BD06C /* Main.storyboard in Resources */,
 				BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */,
@@ -714,15 +789,20 @@
 			files = (
 				BE52CDB81E59F0990086A533 /* User.swift in Sources */,
 				BE52CDA91E59D1570086A533 /* LoginViewController.swift in Sources */,
+				BEB6EB9F1E7345D400B59653 /* Windicon.swift in Sources */,
 				BE242B1E1E50AF04008BD06C /* SpeechBubbleView.swift in Sources */,
 				BE242B251E50B0D3008BD06C /* SocketIO.swift in Sources */,
 				BE242B191E50AEF8008BD06C /* ChatViewController.swift in Sources */,
+				BEB6EB931E733A9200B59653 /* RealmController.swift in Sources */,
 				BE242B391E50D49A008BD06C /* WNotificationCenter.swift in Sources */,
 				BE0D5F761E525E1200CC14E2 /* WPulseView.swift in Sources */,
+				BEB6EB991E7342D600B59653 /* FadeAnimator.swift in Sources */,
 				BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */,
 				BE242B1B1E50AEFE008BD06C /* SpeechBubbleMessage.swift in Sources */,
 				BE242B291E50BB9F008BD06C /* Listables.swift in Sources */,
 				BE5AD72C1E5085510054709C /* AppDelegate.swift in Sources */,
+				BEB6EB951E733EA700B59653 /* FacebookController.swift in Sources */,
+				BEB6EB9C1E73439500B59653 /* NavigationControllerDelegate.swift in Sources */,
 				BE242B271E50B23C008BD06C /* ChatBox.swift in Sources */,
 				BE242B2D1E50BF6D008BD06C /* SplashViewController.swift in Sources */,
 			);
@@ -872,7 +952,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U5FH5JR68H;
 				INFOPLIST_FILE = Winder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beaney.winder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -887,7 +967,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U5FH5JR68H;
 				INFOPLIST_FILE = Winder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beaney.winder;
 				PRODUCT_NAME = "$(TARGET_NAME)";

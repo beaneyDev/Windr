@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import RealmSwift
 
-class User {
+class User: Object {
+    dynamic var fullName: String?
+    dynamic var id: String?
     
+    convenience init(fullName: String, id: String) {
+        self.init()
+        self.fullName = fullName
+        self.id = id
+    }
 }

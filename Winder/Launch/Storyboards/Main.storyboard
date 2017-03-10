@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,12 +20,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2h-jy-XwA" customClass="WPulseView" customModule="Winder" customModuleProvider="target">
-                                <rect key="frame" x="117.5" y="263.5" width="140" height="140"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2h-jy-XwA" customClass="Windicon" customModule="Winder" customModuleProvider="target">
+                                <rect key="frame" x="137.5" y="283.5" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="4uT-UF-qTc"/>
-                                    <constraint firstAttribute="height" constant="140" id="Pb7-Xn-rBT"/>
+                                    <constraint firstAttribute="width" constant="100" id="4uT-UF-qTc"/>
+                                    <constraint firstAttribute="height" constant="100" id="Pb7-Xn-rBT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -38,7 +37,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vYB-AU-6Gd"/>
                     <connections>
-                        <outlet property="pulse" destination="U2h-jy-XwA" id="wxh-bY-BCT"/>
+                        <outlet property="pulse" destination="U2h-jy-XwA" id="xfs-bE-waI"/>
                         <outlet property="pulseHeight" destination="Pb7-Xn-rBT" id="OsH-Le-ocC"/>
                         <outlet property="pulseWidth" destination="4uT-UF-qTc" id="kfY-hB-9bi"/>
                         <segue destination="tDv-zj-Npf" kind="show" identifier="loggedIn" id="gbL-oJ-7XF"/>
@@ -47,15 +46,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1276" y="137.18140929535232"/>
+            <point key="canvasLocation" x="-1514" y="137"/>
         </scene>
         <!--Chat-->
         <scene sceneID="lJv-73-gvn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eai-Gz-YEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Chat" id="tDv-zj-Npf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eai-Gz-YEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-738.39999999999998" y="97.151424287856074"/>
+            <point key="canvasLocation" x="-812" y="94"/>
         </scene>
         <!--Social-->
         <scene sceneID="ar1-I4-tLt">
@@ -63,7 +62,7 @@
                 <viewControllerPlaceholder storyboardName="Social" id="TXe-8D-rMs" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qms-9n-agb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-738" y="171"/>
+            <point key="canvasLocation" x="-806" y="166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dXF-EW-DMx">
@@ -76,10 +75,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
+                        <outlet property="delegate" destination="wnM-B5-JMm" id="f9g-pk-Dhg"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="eue-VU-A25"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmR-EZ-zsb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="wnM-B5-JMm" customClass="NavigationControllerDelegate" customModule="Winder" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="-2215.1999999999998" y="137.18140929535232"/>
         </scene>

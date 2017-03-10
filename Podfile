@@ -13,6 +13,9 @@ target 'Winder' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'FacebookShare'
+  pod 'Realm'
+  pod 'RealmSwift'
+
 
   target 'WinderTests' do
     inherit! :search_paths

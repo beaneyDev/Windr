@@ -12,29 +12,29 @@ import UIKit
 protocol Pulses: class {
     typealias PulseComplete = (() -> ())
     var pulseView: UIView! { get set }
-    var pulseIterations: Int { get set }
+    var pulseIterations: Int? { get set }
     var pulseIndex: Int { get set }
     func pulse(completion: @escaping PulseComplete)
-    func configure(iterations: Int)
+    func pulseOut()
+    func pulseIn()
+    func configure(iterations: Int?)
 }
 
 extension Pulses where Self: UIView {
     func pulse(completion: @escaping PulseComplete) {
-        if pulseIterations == pulseIndex {
+        guard let pulseIterations = self.pulseIterations, pulseIterations > pulseIndex else {
             pulseIndex = 0
             completion()
             return
         }
         
         UIView.animate(withDuration: 0.1, animations: {
-            self.alpha = 1.0
-            self.backgroundColor = UIColor.red
+            self.pulseOut()
             self.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
             self.layoutIfNeeded()
         }) { (finished) in
             UIView.animate(withDuration: 0.5, animations: {
-                self.alpha = 0.6
-                self.backgroundColor = UIColor.orange
+                self.pulseIn()
                 self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                 self.layoutIfNeeded()
             }, completion: { (finished) in
@@ -43,19 +43,4 @@ extension Pulses where Self: UIView {
             })
         }
     }
-    
-    func configure(iterations: Int) {
-        self.backgroundColor = UIColor.red
-        self.pulseIterations = iterations
-        self.layoutIfNeeded()
-        self.layer.cornerRadius = self.frame.size.width / 2.0
-    }
-}
-
-class WPulseView: UIView, Pulses {
-    var pulseIterations: Int = 0
-    var pulseIndex: Int = 0
-    var pulseViewWidth: NSLayoutConstraint!
-    var pulseViewHeight: NSLayoutConstraint!
-    var pulseView: UIView!
 }
