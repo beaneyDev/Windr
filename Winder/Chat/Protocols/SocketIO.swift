@@ -21,14 +21,14 @@ extension SocketIO where Self : WNotifiable {
     func configureSocket() {
         #if (arch(i386) || arch(x86_64))
             self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
-            addHandlers()
-            socket!.connect()
         #else
             self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
-            addHandlers()
-            socket!.connect()
         #endif
         
+        self.socket = SocketIOClient(socketURL: NSURL(string:"192.168.0.43")! as URL)
+        
+        addHandlers()
+        socket!.connect()
         configureTerminationObserver()
     }
     

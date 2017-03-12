@@ -15,16 +15,16 @@ class FacebookController {
     
     func inflateUser(completion: @escaping SocialCompleton) {
         if FBSDKAccessToken.current() != nil {
-            FBSDKGraphRequest(graphPath: "me", parameters: nil).start(completionHandler: { (connection, result, error) in
-                if let dict = result as? NSDictionary, let fullName = dict["name"] as? String, let id = dict["id"] as? String {
-                    let user: User = User(fullName: fullName, id: id)
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "name, id, age_range"]).start(completionHandler: { (connection, result, error) in
+                if let dict = result as? NSDictionary, let fullName = dict["name"] as? String, let id = dict["id"] as? String, let ageRange = dict["age_range"] as? NSDictionary, let ageMin = ageRange["min"] as? Int {
+                    let imageURL = "https://graph.facebook.com/\(id)/picture?type=large"
+                    let user: User = User(fullName: fullName, id: id, imageLink: imageURL, ageRange: ageMin)
                     RealmController.shared.store(object: user)
+                    completion(true)
                 } else {
                     completion(false)
                 }
             })
-            
-            completion(true)
         } else {
             completion(false)
         }

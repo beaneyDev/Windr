@@ -35,6 +35,14 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
         configureMessageBox()
         configureSocket()
         configureKeyboardHiding()
+        presentProfile()
+    }
+    
+    func presentProfile() {
+        let storyboard = UIStoryboard(name: "Social", bundle: nil)
+        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        profile.user = RealmController.shared.fetchCollection(thingy: User.self)[0] as? User
+        self.navigationController?.pushViewController(profile, animated: true)
     }
     
     //MARK: ACTION HANDLING

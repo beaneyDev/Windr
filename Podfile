@@ -15,6 +15,8 @@ target 'Winder' do
   pod 'FacebookShare'
   pod 'Realm'
   pod 'RealmSwift'
+  pod 'MBCache'
+
 
 
   target 'WinderTests' do

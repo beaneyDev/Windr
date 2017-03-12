@@ -22,6 +22,7 @@
 		BE242B311E50BFD9008BD06C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE242B301E50BFD9008BD06C /* Main.storyboard */; };
 		BE242B391E50D49A008BD06C /* WNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B381E50D49A008BD06C /* WNotificationCenter.swift */; };
 		BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE242B3A1E50D4A9008BD06C /* WNotifiable.swift */; };
+		BE5178221E7576100076BB5D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5178211E7576100076BB5D /* ProfileViewController.swift */; };
 		BE52CDA91E59D1570086A533 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52CDA81E59D1570086A533 /* LoginViewController.swift */; };
 		BE52CDAC1E59D17D0086A533 /* Social.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE52CDAB1E59D17D0086A533 /* Social.storyboard */; };
 		BE52CDB21E59D3F50086A533 /* ChatboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE52CDB11E59D3F50086A533 /* ChatboxTests.swift */; };
@@ -31,6 +32,7 @@
 		BE5AD7361E5085510054709C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE5AD7341E5085510054709C /* LaunchScreen.storyboard */; };
 		BE5AD7411E5085510054709C /* WinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD7401E5085510054709C /* WinderTests.swift */; };
 		BE5AD74C1E5085510054709C /* WinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD74B1E5085510054709C /* WinderUITests.swift */; };
+		BE6586C01E75E0A6006CCF9D /* UserInfoBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6586BF1E75E0A6006CCF9D /* UserInfoBarView.swift */; };
 		BEB6EB931E733A9200B59653 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB921E733A9200B59653 /* RealmController.swift */; };
 		BEB6EB951E733EA700B59653 /* FacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB941E733EA700B59653 /* FacebookController.swift */; };
 		BEB6EB991E7342D600B59653 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB981E7342D600B59653 /* FadeAnimator.swift */; };
@@ -78,6 +80,7 @@
 		BE242B301E50BFD9008BD06C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BE242B381E50D49A008BD06C /* WNotificationCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNotificationCenter.swift; sourceTree = "<group>"; };
 		BE242B3A1E50D4A9008BD06C /* WNotifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WNotifiable.swift; sourceTree = "<group>"; };
+		BE5178211E7576100076BB5D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BE52CDA81E59D1570086A533 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE52CDAB1E59D17D0086A533 /* Social.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Social.storyboard; sourceTree = "<group>"; };
 		BE52CDB11E59D3F50086A533 /* ChatboxTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatboxTests.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		BE5AD7471E5085510054709C /* WinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE5AD74B1E5085510054709C /* WinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinderUITests.swift; sourceTree = "<group>"; };
 		BE5AD74D1E5085510054709C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6586BF1E75E0A6006CCF9D /* UserInfoBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoBarView.swift; sourceTree = "<group>"; };
 		BEB6EB921E733A9200B59653 /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		BEB6EB941E733EA700B59653 /* FacebookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookController.swift; sourceTree = "<group>"; };
 		BEB6EB981E7342D600B59653 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				BE52CDA81E59D1570086A533 /* LoginViewController.swift */,
+				BE5178211E7576100076BB5D /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 		BE52CDA71E59D10A0086A533 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE6586BF1E75E0A6006CCF9D /* UserInfoBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -577,7 +583,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = U5FH5JR68H;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					BE5AD73B1E5085510054709C = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -794,8 +800,10 @@
 				BE242B251E50B0D3008BD06C /* SocketIO.swift in Sources */,
 				BE242B191E50AEF8008BD06C /* ChatViewController.swift in Sources */,
 				BEB6EB931E733A9200B59653 /* RealmController.swift in Sources */,
+				BE6586C01E75E0A6006CCF9D /* UserInfoBarView.swift in Sources */,
 				BE242B391E50D49A008BD06C /* WNotificationCenter.swift in Sources */,
 				BE0D5F761E525E1200CC14E2 /* WPulseView.swift in Sources */,
+				BE5178221E7576100076BB5D /* ProfileViewController.swift in Sources */,
 				BEB6EB991E7342D600B59653 /* FadeAnimator.swift in Sources */,
 				BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */,
 				BE242B1B1E50AEFE008BD06C /* SpeechBubbleMessage.swift in Sources */,
@@ -950,12 +958,15 @@
 			baseConfigurationReference = 796008642438C7763BBE8D9E /* Pods-Winder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = U5FH5JR68H;
 				INFOPLIST_FILE = Winder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beaney.winder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0723bd1a-a4bf-4900-82e0-1f56d9c1d9b6";
+				PROVISIONING_PROFILE_SPECIFIER = "PS Wildcard Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -965,12 +976,15 @@
 			baseConfigurationReference = A8F6A09B9C1D0F0658D2E8CA /* Pods-Winder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = U5FH5JR68H;
 				INFOPLIST_FILE = Winder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beaney.winder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0723bd1a-a4bf-4900-82e0-1f56d9c1d9b6";
+				PROVISIONING_PROFILE_SPECIFIER = "PS Wildcard Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

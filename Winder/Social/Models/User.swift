@@ -12,10 +12,14 @@ import RealmSwift
 class User: Object {
     dynamic var fullName: String?
     dynamic var id: String?
+    dynamic var imageLink: String?
+    var ageRange: RealmOptional<Int> = RealmOptional<Int>()
     
-    convenience init(fullName: String, id: String) {
+    convenience init(fullName: String, id: String, imageLink: String, ageRange: Int) {
         self.init()
         self.fullName = fullName
         self.id = id
+        self.imageLink = imageLink
+        self.ageRange.value = ageRange
     }
 }
