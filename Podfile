@@ -16,7 +16,8 @@ target 'Winder' do
   pod 'Realm'
   pod 'RealmSwift'
   pod 'MBCache'
-
+  pod 'Fabric'
+  pod 'TwitterKit'
 
 
   target 'WinderTests' do

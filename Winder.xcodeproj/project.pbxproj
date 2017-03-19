@@ -33,8 +33,9 @@
 		BE5AD7411E5085510054709C /* WinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD7401E5085510054709C /* WinderTests.swift */; };
 		BE5AD74C1E5085510054709C /* WinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5AD74B1E5085510054709C /* WinderUITests.swift */; };
 		BE6586C01E75E0A6006CCF9D /* UserInfoBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6586BF1E75E0A6006CCF9D /* UserInfoBarView.swift */; };
+		BE88E0721E7EB69C00AC43A9 /* MBTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE88E0711E7EB69C00AC43A9 /* MBTimer.swift */; };
 		BEB6EB931E733A9200B59653 /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB921E733A9200B59653 /* RealmController.swift */; };
-		BEB6EB951E733EA700B59653 /* FacebookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB941E733EA700B59653 /* FacebookController.swift */; };
+		BEB6EB951E733EA700B59653 /* SocialController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB941E733EA700B59653 /* SocialController.swift */; };
 		BEB6EB991E7342D600B59653 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB981E7342D600B59653 /* FadeAnimator.swift */; };
 		BEB6EB9C1E73439500B59653 /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB9B1E73439500B59653 /* NavigationControllerDelegate.swift */; };
 		BEB6EB9F1E7345D400B59653 /* Windicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB6EB9E1E7345D400B59653 /* Windicon.swift */; };
@@ -97,8 +98,9 @@
 		BE5AD74B1E5085510054709C /* WinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinderUITests.swift; sourceTree = "<group>"; };
 		BE5AD74D1E5085510054709C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6586BF1E75E0A6006CCF9D /* UserInfoBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoBarView.swift; sourceTree = "<group>"; };
+		BE88E0711E7EB69C00AC43A9 /* MBTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MBTimer.swift; sourceTree = "<group>"; };
 		BEB6EB921E733A9200B59653 /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
-		BEB6EB941E733EA700B59653 /* FacebookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookController.swift; sourceTree = "<group>"; };
+		BEB6EB941E733EA700B59653 /* SocialController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialController.swift; sourceTree = "<group>"; };
 		BEB6EB981E7342D600B59653 /* FadeAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		BEB6EB9B1E73439500B59653 /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
 		BEB6EB9E1E7345D400B59653 /* Windicon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Windicon.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				BE242B1C1E50AF04008BD06C /* SpeechBubbleView.swift */,
 				BE242B1D1E50AF04008BD06C /* SpeechBubbleView.xib */,
+				BE88E0711E7EB69C00AC43A9 /* MBTimer.swift */,
 			);
 			name = Views;
 			path = Chat/Views;
@@ -300,7 +303,7 @@
 		BE52CDA31E59D0EA0086A533 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BEB6EB941E733EA700B59653 /* FacebookController.swift */,
+				BEB6EB941E733EA700B59653 /* SocialController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				BE5AD7261E5085510054709C /* Resources */,
 				E63311593F9B37FC436293FA /* [CP] Embed Pods Frameworks */,
 				C7D931F31689A470F9762867 /* [CP] Copy Pods Resources */,
+				BEC8F3E81E7D9FEB0052F24A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -711,6 +715,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WinderUITests/Pods-WinderUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BEC8F3E81E7D9FEB0052F24A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" b825c533a00f2bcab1edcfc24019b792e97305cf 30198e125d75fc57163cfe70efc3926b2f3d709a3af224703cd1d10229e2ae9e";
+		};
 		C6EEA09CFCEBF94BC822BC0E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -805,11 +822,12 @@
 				BE0D5F761E525E1200CC14E2 /* WPulseView.swift in Sources */,
 				BE5178221E7576100076BB5D /* ProfileViewController.swift in Sources */,
 				BEB6EB991E7342D600B59653 /* FadeAnimator.swift in Sources */,
+				BE88E0721E7EB69C00AC43A9 /* MBTimer.swift in Sources */,
 				BE242B3B1E50D4A9008BD06C /* WNotifiable.swift in Sources */,
 				BE242B1B1E50AEFE008BD06C /* SpeechBubbleMessage.swift in Sources */,
 				BE242B291E50BB9F008BD06C /* Listables.swift in Sources */,
 				BE5AD72C1E5085510054709C /* AppDelegate.swift in Sources */,
-				BEB6EB951E733EA700B59653 /* FacebookController.swift in Sources */,
+				BEB6EB951E733EA700B59653 /* SocialController.swift in Sources */,
 				BEB6EB9C1E73439500B59653 /* NavigationControllerDelegate.swift in Sources */,
 				BE242B271E50B23C008BD06C /* ChatBox.swift in Sources */,
 				BE242B2D1E50BF6D008BD06C /* SplashViewController.swift in Sources */,

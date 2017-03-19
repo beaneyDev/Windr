@@ -8,9 +8,12 @@
 
 import Foundation
 import UIKit
+import MBUtils
+
 import FBSDKCoreKit
 import FBSDKLoginKit
-import MBUtils
+import TwitterKit
+import Fabric
 
 class LoginViewController: UIViewController {
     
@@ -21,20 +24,24 @@ class LoginViewController: UIViewController {
         configureWindicon()
     }
     
+    //MARK: UI FUNCTIONS.
+    func load(completion: @escaping () -> ()) {
+        self.windiconWidth.constant = 50.0
+        self.windicon.resetImage()
+        UIView.animate(withDuration: 0.2, animations: {
+            self.view.layoutIfNeeded()
+        }) { (finished) in
+            completion()
+        }
+    }
+    
     func configureWindicon() {
         self.windicon.configureWithColors(primaryColor: #colorLiteral(red: 0.1764705882, green: 0.4980392157, blue: 0.7568627451, alpha: 1), secondaryColor: nil, action: {
             print("HI")
         }, pulses: nil)
         
         self.windicon.layer.cornerRadius = self.windicon.frame.size.width / 2.0
-        
-        let animation = CABasicAnimation(keyPath: "cornerRadius")
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        animation.duration = 0.3
-        animation.fromValue = self.windicon.layer.cornerRadius
-        animation.toValue = 0.0
-        self.windicon.layer.add(animation, forKey: "cornerRadius")
-        self.windicon.layer.cornerRadius = 0.0
+        self.windicon.roundMe(cornerRadius: 0.0)
         
         //Setting width on a delay so as not to conflict with the above animation.
         MBOn.delay(0.1) {
@@ -50,20 +57,48 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func loginWithWindr(_ sender: Any) {
-        self.performSegue(withIdentifier: "chat", sender: nil)
+    //MARK: LOGIN FUNCTIONS.
+    @IBAction func loginWithTwitter(_ sender: Any) {
+        Twitter.sharedInstance().logIn { session, error in
+            if let session = session {
+                self.loadUser(userInfo: ["session": session], socialProvider: TwitterController.shared)
+            } else {
+            }
+        }
     }
     
     @IBAction func loginWithFB(_ sender: Any) {
         let login = FBSDKLoginManager()
         login.logIn(withReadPermissions: ["public_profile"], from: self) { (result, error) in
-            FacebookController.shared.inflateUser(completion: { (success) in
-                if success {
-                    self.performSegue(withIdentifier: "chat", sender: nil)
-                } else {
-                    UIAlertView(title: "Something went wrong...", message: "There was an error authenticating with Facebook, please try again.", delegate: nil, cancelButtonTitle: "OK").show()
-                }
+            self.loadUser(socialProvider: FacebookController.shared)
+        }
+    }
+    
+    func loadUser(userInfo: [AnyHashable: Any]? = nil, socialProvider: Social) {
+        self.load {
+            MBOn.delay(0.1, task: {
+                self.windicon.roundMe(cornerRadius: self.windicon.frame.size.width / 2.0)
+                self.windicon.configureWithSpinner()
+                socialProvider.inflateUser(userInfo: userInfo, completion: { (success) in
+                    if success {
+                        SocialController.shared.storeActiveSocialProvider(socialProvider: socialProvider.socialName)
+                        self.performSegue(withIdentifier: "chat", sender: nil)
+                    } else {
+                        self.alertIssueWithSocialProvider(provider: socialProvider.socialName)
+                    }
+                })
             })
+        }
+    }
+    
+    //MARK: ERROR HANDLING.
+    func alertIssueWithSocialProvider(provider: String) {
+        let alert = UIAlertController(title: "Something went wrong...", message: "There was an error authenticating with \(provider), please try again.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        MBOn.main {
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }

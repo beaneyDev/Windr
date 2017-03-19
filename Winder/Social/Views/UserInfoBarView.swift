@@ -16,10 +16,20 @@ class UserInfoBarView: UIView {
     var animationIndex = 0
     
     func configure(completion: (() -> ())?) {
-        let age = "Age:\n" + String(describing: user!.ageRange.value!) + " years + "
+        guard let user = user else {
+            return
+        }
+        
+        var userInfo = [String]()
+        
+        if let rawAge = user.ageRange.value {
+            let age = "Age:\n" + String(describing: rawAge) + " years + "
+            userInfo.append(age)
+        }
+        
+        //TODO: Implement gender and preference.
         let gender = "Gender:\n" + "Male"
         let interestedIn = "Interested in:\nWomen"
-        let userInfo = [age, gender, interestedIn]
         
         var totalChars = 0
         
@@ -37,12 +47,6 @@ class UserInfoBarView: UIView {
             item.text = textItem
             item.translatesAutoresizingMaskIntoConstraints = false
             self.addSubview(item)
-            
-            //Width
-//            let chars = textItem.characters.count
-//            let perc = CGFloat(chars) / CGFloat(totalChars)
-//            let width = NSLayoutConstraint(item: item, attribute: .width, relatedBy: .equal, toItem: self, attribute: .width, multiplier: perc, constant: 0.0)
-//            self.addConstraint(width)
             
             //Top
             self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[item]|", options: [], metrics: nil, views: ["item": item]))
@@ -79,7 +83,7 @@ class UserInfoBarView: UIView {
         
         let infoItem = infoLabels[animationIndex]
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             infoItem.alpha = 1.0
         }) { (finished) in
             self.animationIndex += 1

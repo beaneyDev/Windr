@@ -15,10 +15,17 @@ import RxSwift
 
 class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     var disposeBag: DisposeBag!
+    
+    @IBOutlet weak var windicon: Windicon!
 
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint! //Used for keyboard hiding/showing.
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var sendBtn: UIButton! {
+        didSet {
+            sendBtn.imageView?.contentMode = .scaleAspectFit
+            sendBtn.imageView?.tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        }
+    }
     @IBOutlet weak var formField: UITextField!
     
     var messages = [SpeechBubbleMessage]()
@@ -41,15 +48,29 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     func presentProfile() {
         let storyboard = UIStoryboard(name: "Social", bundle: nil)
         let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        profile.user = RealmController.shared.fetchCollection(thingy: User.self)[0] as? User
+        
+        let user = RealmController.shared.fetchCollection(type: User.self, primaryKey: SocialController.shared.fetchActiveSocialProvider() ?? "Facebook")
+        
+        if let user = user as? User {
+            profile.user = user
+        }
+
         self.navigationController?.pushViewController(profile, animated: true)
     }
     
     //MARK: ACTION HANDLING
     @IBAction func didTapSend(_ sender: Any) {
         guard let formFieldText = self.formField.text, !formFieldText.isEmpty else { return }
+        guard let socketID = self.socketID else {
+            let alert = UIAlertController(title: "Issue connecting to server", message: "There was an issue connecting to the server, please try aain (Error 500).", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
         let message = Message(message: formFieldText)
-        self.sendMessage(socketID: self.socketID!, message: message)
+        self.sendMessage(socketID: socketID, message: message)
         self.formField.text = ""
     }
     
@@ -61,7 +82,7 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     
     func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            bottomConstraint.constant += keyboardSize.height
+            bottomConstraint.constant = keyboardSize.height
 
             UIView.animate(withDuration: 0.3, animations: {
                 self.view.layoutIfNeeded()
@@ -70,13 +91,10 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            bottomConstraint.constant -= keyboardSize.height
-            
-            UIView.animate(withDuration: 0.3, animations: { 
-                self.view.layoutIfNeeded()
-            })
-        }
+        bottomConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations: { 
+            self.view.layoutIfNeeded()
+        })
     }
 }
 

@@ -14,13 +14,13 @@ class RealmController {
     func store(object: Object) {
         let realm = try! Realm()
         try! realm.write {
-            realm.add(object)
+            realm.add(object, update: true)
         }
     }
     
-    func fetchCollection(thingy: Object.Type) -> Results<Object> {
+    func fetchCollection(type: Object.Type, primaryKey: String) -> Object? {
         let realm = try! Realm()
-        return realm.objects(thingy.self)
+        return realm.object(ofType: type.self, forPrimaryKey: primaryKey)
     }
     
     func fetch() -> Object? {

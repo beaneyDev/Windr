@@ -19,13 +19,13 @@ protocol SocketIO: class {
 
 extension SocketIO where Self : WNotifiable {
     func configureSocket() {
-        #if (arch(i386) || arch(x86_64))
-            self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
-        #else
-            self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
-        #endif
+//        #if (arch(i386) || arch(x86_64))
+//            self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
+//        #else
+//            self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
+//        #endif
         
-        self.socket = SocketIOClient(socketURL: NSURL(string:"192.168.0.43")! as URL)
+        self.socket = SocketIOClient(socketURL: NSURL(string:"http://192.168.0.43:3000")! as URL)
         
         addHandlers()
         socket!.connect()

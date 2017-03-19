@@ -18,6 +18,7 @@ class Windicon: UIView {
     var pulseViewWidth: NSLayoutConstraint!
     var pulseViewHeight: NSLayoutConstraint!
     var pulseView: UIView!
+    var stopPulsing: Bool = false
     
     //Optional 
     var primaryColor: UIColor?
@@ -25,6 +26,7 @@ class Windicon: UIView {
     var primaryImage: UIImage?
     var secondaryImage: UIImage?
     var imageView: UIImageView?
+    var spinner: UIActivityIndicatorView?
     
     //Windicon stuff.
     var windiAction: WindiconAction?
@@ -34,7 +36,30 @@ class Windicon: UIView {
         self.windiAction?()
     }
     
-    //Basic setup
+    //MARK: RESET FUNCTIONS
+    func hardReset() {
+        self.resetImage()
+        self.resetColors()
+        self.resetSpinner()
+    }
+    
+    func resetImage() {
+        self.primaryImage = nil
+        self.secondaryImage = nil
+        self.imageView?.image = nil
+    }
+    
+    func resetColors() {
+        self.primaryColor = nil
+        self.secondaryColor = nil
+    }
+    
+    func resetSpinner() {
+        self.spinner?.removeFromSuperview()
+        self.spinner = nil
+    }
+    
+    //MARK: INITIAL CONFIGURATIONS
     private func configureGesture() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(Windicon.tapped))
         self.addGestureRecognizer(gesture)
@@ -44,6 +69,7 @@ class Windicon: UIView {
         configure(iterations: pulses)
     }
     
+    //MARK: CUSTOMISABLE CONFIGURATIONS
     func configureWithImage(primaryImage: UIImage, secondaryImage: UIImage?, action: WindiconAction?, pulses: Int?) {
         configureGesture()
         self.windiAction = action
@@ -70,6 +96,27 @@ class Windicon: UIView {
         self.secondaryColor = secondaryColor
         self.backgroundColor = self.primaryColor
         configurePulses(pulses: pulses)
+    }
+    
+    func configureWithSpinner() {
+        self.spinner = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        self.spinner?.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.spinner!)
+        let centerX = NSLayoutConstraint(item: self.spinner!, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        let centerY = NSLayoutConstraint(item: self.spinner!, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1.0, constant: 0.0)
+        self.addConstraints([centerX, centerY])
+        self.spinner?.startAnimating()        
+    }
+    
+    //MARK: COOL UI FUNCTIONS
+    func roundMe(cornerRadius: CGFloat) {
+        let animation = CABasicAnimation(keyPath: "cornerRadius")
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+        animation.duration = 0.3
+        animation.fromValue = self.layer.cornerRadius
+        animation.toValue = cornerRadius
+        self.layer.add(animation, forKey: "cornerRadius")
+        self.layer.cornerRadius = cornerRadius
     }
 }
 

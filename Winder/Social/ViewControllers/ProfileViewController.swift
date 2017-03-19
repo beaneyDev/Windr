@@ -39,27 +39,25 @@ class ProfileViewController : UIViewController {
         self.facebook.alpha = 0.0
         self.twitter.alpha = 0.0
         
-        
-        
         if let user = self.user {
             self.configureImage(user: user, completion: {
                 self.configureLabels(user: user, completion: {
-                    self.expandSeparator {
-                        self.userInfo.user = user
-                        self.userInfo.configure(completion: {
-                            self.facebook.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-                            UIView.animate(withDuration: 0.2, animations: {
-                                self.facebook.transform = CGAffineTransform.identity
-                                self.facebook.alpha = 1.0
-                            }, completion: { (finished) in
-                                self.twitter.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
-                                UIView.animate(withDuration: 0.2, animations: {
-                                    self.twitter.transform = CGAffineTransform.identity
-                                    self.twitter.alpha = 1.0
-                                })
-                            })
+                    self.expandSeparator()
+                    self.userInfo.user = user
+                    self.userInfo.configure(completion: {
+                        self.facebook.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                        
+                        UIView.animate(withDuration: 0.2, animations: { 
+                            self.facebook.transform = CGAffineTransform.identity
+                            self.facebook.alpha = 1.0
                         })
-                    }
+                        
+                        self.twitter.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+                        UIView.animate(withDuration: 0.2, delay: 0.1, options: [], animations: { 
+                            self.twitter.transform = CGAffineTransform.identity
+                            self.twitter.alpha = 1.0
+                        }, completion: nil)
+                    })
                 })
             })
         }
@@ -88,7 +86,7 @@ class ProfileViewController : UIViewController {
         self.profileName.text = fullName
         self.profileName.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
         
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             self.profileName.alpha = 1.0
             self.profileName.transform = CGAffineTransform.identity
         }) { (finished) in
@@ -96,12 +94,10 @@ class ProfileViewController : UIViewController {
         }
     }
     
-    func expandSeparator(completion: @escaping () -> ()) {
+    func expandSeparator() {
         self.separatorWidth.constant = self.view.frame.size.width
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.15, animations: {
             self.view.layoutIfNeeded()
-        }) { (finished) in
-            completion()
-        }
+        })
     }
 }

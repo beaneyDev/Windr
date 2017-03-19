@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,24 +21,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="psx-hB-DJk">
-                                <rect key="frame" x="7" y="7" width="361" height="614"/>
+                                <rect key="frame" x="7" y="80" width="361" height="521"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbX-ZU-n3M">
-                                <rect key="frame" x="0.0" y="629" width="375" height="38"/>
+                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="okJ-48-mmi">
-                                        <rect key="frame" x="8" y="4" width="315" height="30"/>
+                                        <rect key="frame" x="8" y="4" width="315" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8KA-bJ-2ac"/>
+                                        </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oya-Oa-5zp">
-                                        <rect key="frame" x="331" y="4" width="36" height="30"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oya-Oa-5zp">
+                                        <rect key="frame" x="331" y="4" width="36" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="36" id="Saq-CF-w8z"/>
                                         </constraints>
-                                        <state key="normal" title="Send"/>
+                                        <state key="normal" image="send-btn"/>
                                         <connections>
                                             <action selector="didTapSend:" destination="sDm-St-CdF" eventType="touchUpInside" id="ktI-yP-pwz"/>
                                         </connections>
@@ -56,16 +58,34 @@
                                     <constraint firstItem="okJ-48-mmi" firstAttribute="leading" secondItem="ZbX-ZU-n3M" secondAttribute="leading" constant="8" id="zub-wF-qJF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFw-HX-UYj" customClass="Windicon" customModule="Winder" customModuleProvider="target">
+                                <rect key="frame" x="8" y="22" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="X4H-7S-m7Q"/>
+                                    <constraint firstAttribute="width" constant="50" id="Xgy-jx-n4Q"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6C-g9-ZM2">
+                                <rect key="frame" x="66" y="20" width="302" height="52"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="psx-hB-DJk" firstAttribute="top" secondItem="gk1-u0-AUT" secondAttribute="top" constant="7" id="9sQ-QM-EeO"/>
+                            <constraint firstItem="psx-hB-DJk" firstAttribute="top" secondItem="gFw-HX-UYj" secondAttribute="bottom" constant="8" id="1jF-PO-WQt"/>
+                            <constraint firstItem="g6C-g9-ZM2" firstAttribute="top" secondItem="8s0-zY-UOZ" secondAttribute="bottom" id="CyF-NS-sfJ"/>
                             <constraint firstAttribute="trailing" secondItem="ZbX-ZU-n3M" secondAttribute="trailing" id="DaB-97-NPB"/>
+                            <constraint firstItem="g6C-g9-ZM2" firstAttribute="leading" secondItem="gFw-HX-UYj" secondAttribute="trailing" constant="8" id="QeR-uQ-u6b"/>
                             <constraint firstItem="i2l-Ix-vQa" firstAttribute="top" secondItem="ZbX-ZU-n3M" secondAttribute="bottom" id="SwW-vd-ZeI"/>
+                            <constraint firstItem="gFw-HX-UYj" firstAttribute="top" secondItem="gk1-u0-AUT" secondAttribute="top" constant="22" id="Uql-nQ-xPe"/>
                             <constraint firstAttribute="trailing" secondItem="psx-hB-DJk" secondAttribute="trailing" constant="7" id="Zaz-Gt-H8f"/>
                             <constraint firstItem="ZbX-ZU-n3M" firstAttribute="top" secondItem="psx-hB-DJk" secondAttribute="bottom" constant="8" id="dqR-24-B6n"/>
                             <constraint firstItem="ZbX-ZU-n3M" firstAttribute="leading" secondItem="gk1-u0-AUT" secondAttribute="leading" id="o4X-dq-xOv"/>
                             <constraint firstItem="psx-hB-DJk" firstAttribute="leading" secondItem="gk1-u0-AUT" secondAttribute="leading" constant="7" id="qVb-Ek-tNf"/>
+                            <constraint firstAttribute="trailing" secondItem="g6C-g9-ZM2" secondAttribute="trailing" constant="7" id="rqI-sj-Gue"/>
+                            <constraint firstItem="psx-hB-DJk" firstAttribute="top" secondItem="g6C-g9-ZM2" secondAttribute="bottom" constant="8" id="sO0-hp-XOU"/>
+                            <constraint firstItem="gFw-HX-UYj" firstAttribute="leading" secondItem="gk1-u0-AUT" secondAttribute="leading" constant="8" id="t20-qo-gVX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -73,6 +93,7 @@
                         <outlet property="formField" destination="okJ-48-mmi" id="SEN-qI-obg"/>
                         <outlet property="sendBtn" destination="oya-Oa-5zp" id="rNO-8D-beN"/>
                         <outlet property="tableView" destination="psx-hB-DJk" id="mdn-T9-vWz"/>
+                        <outlet property="windicon" destination="gFw-HX-UYj" id="Bon-B3-Qb2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gL7-ZB-53Y" sceneMemberID="firstResponder"/>
@@ -80,4 +101,7 @@
             <point key="canvasLocation" x="-2215.1999999999998" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="send-btn" width="256" height="256"/>
+    </resources>
 </document>
