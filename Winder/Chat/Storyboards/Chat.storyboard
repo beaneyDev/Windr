@@ -66,7 +66,7 @@
                                     <constraint firstAttribute="width" constant="50" id="Xgy-jx-n4Q"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6C-g9-ZM2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6C-g9-ZM2" customClass="ChatTimer" customModule="Winder" customModuleProvider="target">
                                 <rect key="frame" x="66" y="20" width="302" height="52"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -90,6 +90,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomConstraint" destination="SwW-vd-ZeI" id="Xj0-ty-VFf"/>
+                        <outlet property="chatTimer" destination="g6C-g9-ZM2" id="C3O-kY-RPS"/>
                         <outlet property="formField" destination="okJ-48-mmi" id="SEN-qI-obg"/>
                         <outlet property="sendBtn" destination="oya-Oa-5zp" id="rNO-8D-beN"/>
                         <outlet property="tableView" destination="psx-hB-DJk" id="mdn-T9-vWz"/>

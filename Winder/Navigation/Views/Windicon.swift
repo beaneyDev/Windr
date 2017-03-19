@@ -70,7 +70,7 @@ class Windicon: UIView {
     }
     
     //MARK: CUSTOMISABLE CONFIGURATIONS
-    func configureWithImage(primaryImage: UIImage, secondaryImage: UIImage?, action: WindiconAction?, pulses: Int?) {
+    func configureWithImage(primaryImage: UIImage, secondaryImage: UIImage?, pulses: Int?, action: WindiconAction?) {
         configureGesture()
         self.windiAction = action
         self.primaryImage = primaryImage
@@ -109,19 +109,22 @@ class Windicon: UIView {
     }
     
     //MARK: COOL UI FUNCTIONS
-    func roundMe(cornerRadius: CGFloat) {
-        let animation = CABasicAnimation(keyPath: "cornerRadius")
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
-        animation.duration = 0.3
-        animation.fromValue = self.layer.cornerRadius
-        animation.toValue = cornerRadius
-        self.layer.add(animation, forKey: "cornerRadius")
+    func roundMe(cornerRadius: CGFloat, animated: Bool) {
+        if animated {
+            let animation = CABasicAnimation(keyPath: "cornerRadius")
+            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+            animation.duration = 0.3
+            animation.fromValue = self.layer.cornerRadius
+            animation.toValue = cornerRadius
+            self.layer.add(animation, forKey: "cornerRadius")
+        }
+        
         self.layer.cornerRadius = cornerRadius
     }
 }
 
-extension Windicon: Pulses {
-    //Pulsable stuff
+extension Windicon: Pulsable {
+    //MARK: PULSABLE FUNCTIONS
     func pulseIn() {
         self.imageView?.image = self.primaryImage
         self.backgroundColor = self.primaryColor

@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
         }, pulses: nil)
         
         self.windicon.layer.cornerRadius = self.windicon.frame.size.width / 2.0
-        self.windicon.roundMe(cornerRadius: 0.0)
+        self.windicon.roundMe(cornerRadius: 0.0, animated: true)
         
         //Setting width on a delay so as not to conflict with the above animation.
         MBOn.delay(0.1) {
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
                 UIView.animate(withDuration: 0.3, delay: 0.3, options: [], animations: {
                     self.view.layoutIfNeeded()
                 }, completion: { (finished) in
-                    self.windicon.configureWithImage(primaryImage: UIImage(named: "header-logo")!, secondaryImage: nil, action: nil, pulses: 1)
+                    self.windicon.configureWithImage(primaryImage: UIImage(named: "header-logo")!, secondaryImage: nil, pulses: 1, action: nil)
                     self.windicon.pulse { }
                 })
             }
@@ -77,8 +77,17 @@ class LoginViewController: UIViewController {
     func loadUser(userInfo: [AnyHashable: Any]? = nil, socialProvider: Social) {
         self.load {
             MBOn.delay(0.1, task: {
-                self.windicon.roundMe(cornerRadius: self.windicon.frame.size.width / 2.0)
+                self.windicon.roundMe(cornerRadius: self.windicon.frame.size.width / 2.0, animated: true)
                 self.windicon.configureWithSpinner()
+                
+                let windiCenter = self.windicon.center
+                let targetCenter = (self.windicon.frame.size.width / 2.0) + 8.0
+                let transX = targetCenter - windiCenter.x
+                
+                UIView.animate(withDuration: 0.4, animations: {
+                    self.windicon.transform = CGAffineTransform(translationX: transX, y: 0.0)
+                })
+                
                 socialProvider.inflateUser(userInfo: userInfo, completion: { (success) in
                     if success {
                         SocialController.shared.storeActiveSocialProvider(socialProvider: socialProvider.socialName)

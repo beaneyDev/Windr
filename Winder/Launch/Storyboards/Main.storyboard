@@ -40,21 +40,81 @@
                         <outlet property="pulse" destination="U2h-jy-XwA" id="xfs-bE-waI"/>
                         <outlet property="pulseHeight" destination="Pb7-Xn-rBT" id="OsH-Le-ocC"/>
                         <outlet property="pulseWidth" destination="4uT-UF-qTc" id="kfY-hB-9bi"/>
-                        <segue destination="tDv-zj-Npf" kind="show" identifier="loggedIn" id="gbL-oJ-7XF"/>
                         <segue destination="TXe-8D-rMs" kind="show" identifier="notLoggedIn" id="5nn-ct-6Ng"/>
+                        <segue destination="enk-el-WVb" kind="show" identifier="loggedIn" id="jgf-vP-Wnz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1514" y="137"/>
         </scene>
-        <!--Chat-->
-        <scene sceneID="lJv-73-gvn">
+        <!--Home Menu View Controller-->
+        <scene sceneID="YM8-Yx-q8P">
             <objects>
-                <viewControllerPlaceholder storyboardName="Chat" id="tDv-zj-Npf" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eai-Gz-YEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="enk-el-WVb" customClass="HomeMenuViewController" customModule="Winder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QYf-lZ-clh"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vi8-IF-5Kd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Q9j-tZ-npW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mm5-9E-7Oa">
+                                <rect key="frame" x="8" y="80" width="359" height="579"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0at-Fn-BWL">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="g5U-4J-wdR">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tlb-Bg-yhG">
+                                <rect key="frame" x="8" y="22" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9ob-KD-QzM"/>
+                                    <constraint firstAttribute="width" constant="50" id="nDA-vC-x4j"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tlb-Bg-yhG" firstAttribute="top" secondItem="Q9j-tZ-npW" secondAttribute="top" constant="22" id="AQ9-wT-lpx"/>
+                            <constraint firstItem="Tlb-Bg-yhG" firstAttribute="leading" secondItem="Q9j-tZ-npW" secondAttribute="leading" constant="8" id="MA5-mV-KrH"/>
+                            <constraint firstAttribute="trailing" secondItem="Mm5-9E-7Oa" secondAttribute="trailing" constant="8" id="Q0s-cG-Wdq"/>
+                            <constraint firstItem="Vi8-IF-5Kd" firstAttribute="top" secondItem="Mm5-9E-7Oa" secondAttribute="bottom" constant="8" id="T8H-wf-aCG"/>
+                            <constraint firstItem="Mm5-9E-7Oa" firstAttribute="leading" secondItem="Q9j-tZ-npW" secondAttribute="leading" constant="8" id="fbh-nf-vQg"/>
+                            <constraint firstItem="Mm5-9E-7Oa" firstAttribute="top" secondItem="Tlb-Bg-yhG" secondAttribute="bottom" constant="8" id="s84-tE-xWg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Mm5-9E-7Oa" id="ofm-6R-mdO"/>
+                        <segue destination="ibp-aK-A01" kind="show" identifier="chat" id="u1w-aJ-P1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="co6-JF-BsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-812" y="94"/>
+            <point key="canvasLocation" x="-391" y="-63"/>
+        </scene>
+        <!--Chat-->
+        <scene sceneID="EVr-3l-di1">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="ibp-aK-A01" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e20-L4-tET" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="-69"/>
         </scene>
         <!--Social-->
         <scene sceneID="ar1-I4-tLt">
@@ -62,14 +122,14 @@
                 <viewControllerPlaceholder storyboardName="Social" id="TXe-8D-rMs" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qms-9n-agb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-806" y="166"/>
+            <point key="canvasLocation" x="-636" y="401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dXF-EW-DMx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="U2K-u6-tGh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xu0-hz-8yY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="xu0-hz-8yY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

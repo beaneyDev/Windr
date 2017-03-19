@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol Pulses: class {
+protocol Pulsable: class {
     typealias PulseComplete = (() -> ())
     var pulseView: UIView! { get set }
     var pulseIterations: Int? { get set }
@@ -22,7 +22,7 @@ protocol Pulses: class {
     func configure(iterations: Int?)
 }
 
-extension Pulses where Self: UIView {
+extension Pulsable where Self: UIView {
     func pulseIndefinitely(completion: @escaping PulseComplete) {
         guard !stopPulsing else {
             completion()

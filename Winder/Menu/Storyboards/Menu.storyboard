@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="UkI-Yf-T0L">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Burger Menu View Controller-->
+        <scene sceneID="AlD-zb-Imq">
+            <objects>
+                <viewController id="UkI-Yf-T0L" customClass="BurgerMenuViewController" customModule="Winder" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g73-RO-VHl"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Hk-Nq-tdC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Wo-cc-kJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-or-Hep">
+                                <rect key="frame" x="8" y="66" width="359" height="593"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uhg-58-3xK">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="xUD-Jn-V0h">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MaH-ag-aFw" customClass="Windicon" customModule="Winder" customModuleProvider="target">
+                                <rect key="frame" x="162" y="8" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Jo0-Kf-NCJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="TUM-sm-0fy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MaH-ag-aFw" firstAttribute="top" secondItem="2Wo-cc-kJZ" secondAttribute="topMargin" constant="8" id="T1g-mB-BOZ"/>
+                            <constraint firstItem="3Hk-Nq-tdC" firstAttribute="top" secondItem="jDE-or-Hep" secondAttribute="bottom" constant="8" id="YEY-vY-f1L"/>
+                            <constraint firstItem="MaH-ag-aFw" firstAttribute="centerX" secondItem="2Wo-cc-kJZ" secondAttribute="centerX" id="eo7-J7-GmE"/>
+                            <constraint firstAttribute="trailing" secondItem="jDE-or-Hep" secondAttribute="trailing" constant="8" id="fA6-7l-vZ8"/>
+                            <constraint firstItem="jDE-or-Hep" firstAttribute="leading" secondItem="2Wo-cc-kJZ" secondAttribute="leading" constant="8" id="vQg-tq-oLE"/>
+                            <constraint firstItem="jDE-or-Hep" firstAttribute="top" secondItem="MaH-ag-aFw" secondAttribute="bottom" constant="8" id="x9O-hc-YQf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="jDE-or-Hep" id="c3C-hj-rkI"/>
+                        <outlet property="windicon" destination="MaH-ag-aFw" id="fsE-Gc-T8B"/>
+                        <outlet property="windiconHeight" destination="TUM-sm-0fy" id="99y-Xa-dkz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1db-ao-Ymf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="317.60000000000002" y="-188.45577211394306"/>
+        </scene>
+    </scenes>
+</document>

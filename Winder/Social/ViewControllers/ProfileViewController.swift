@@ -19,8 +19,11 @@ class ProfileViewController : UIViewController {
             self.windicon.clipsToBounds = true
             
             self.windicon.configureWithColors(primaryColor: #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1), secondaryColor: nil, action: {
-                print("HI")
+                self.navigationController?.popViewController(animated: true)
             }, pulses: 0)
+            
+            self.windicon.configureWithImage(primaryImage: UIImage(named:"close")!, secondaryImage: nil, pulses: 0, action: self.windicon.windiAction)
+            self.windicon.imageView?.tintColor = UIColor.white
         }
     }
     var url: String = ""

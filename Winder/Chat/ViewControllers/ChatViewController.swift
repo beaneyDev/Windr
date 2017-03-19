@@ -16,7 +16,18 @@ import RxSwift
 class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     var disposeBag: DisposeBag!
     
-    @IBOutlet weak var windicon: Windicon!
+    @IBOutlet weak var windicon: Windicon! {
+        didSet {
+            windicon.roundMe(cornerRadius: windicon.frame.size.width / 2.0, animated: false)
+            windicon.configureWithColors(primaryColor: #colorLiteral(red: 0.1002229676, green: 0.6974583268, blue: 0.9604492784, alpha: 1), secondaryColor: nil, action: nil, pulses: 0)
+            windicon.configureWithImage(primaryImage: UIImage(named: "menu")!, secondaryImage: nil, pulses: 0, action: {
+                self.presentMenuForChatView()
+            })
+            
+            windicon.imageView?.tintColor = UIColor.white
+        }
+    }
+    @IBOutlet weak var chatTimer: ChatTimer!
 
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint! //Used for keyboard hiding/showing.
     @IBOutlet weak var tableView: UITableView!
@@ -33,6 +44,7 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
     var socket: Socketable?
     var socketID: Int?
     
+    //MARK: VC LIFE CYCLE
     override func viewDidLoad() {
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false;
         self.navigationItem.hidesBackButton = true
@@ -42,20 +54,14 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
         configureMessageBox()
         configureSocket()
         configureKeyboardHiding()
-        presentProfile()
+        configureTimer()
+        //presentProfile()
     }
     
-    func presentProfile() {
-        let storyboard = UIStoryboard(name: "Social", bundle: nil)
-        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
-        
-        let user = RealmController.shared.fetchCollection(type: User.self, primaryKey: SocialController.shared.fetchActiveSocialProvider() ?? "Facebook")
-        
-        if let user = user as? User {
-            profile.user = user
+    func configureTimer() {
+        self.chatTimer.configure(with: 13) {
+            self.presentMenuForChatView()
         }
-
-        self.navigationController?.pushViewController(profile, animated: true)
     }
     
     //MARK: ACTION HANDLING
@@ -72,6 +78,26 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
         let message = Message(message: formFieldText)
         self.sendMessage(socketID: socketID, message: message)
         self.formField.text = ""
+    }
+    
+    func presentMenuForChatView() {
+        let reject = MenuItem(menuImage: "reject", menuText: "Not interested", menuAction: "reject")
+        let accept = MenuItem(menuImage: "accept", menuText: "Show me", menuAction: "accept")
+        let size = CGSize(width: 300, height: 200)
+        self.presentMenu(with: [reject, accept], showClose: false, size: size, delegate: self)
+    }
+    
+    func presentProfile() {
+        let storyboard = UIStoryboard(name: "Social", bundle: nil)
+        let profile = storyboard.instantiateViewController(withIdentifier: "profile") as! ProfileViewController
+        
+        let user = RealmController.shared.fetchCollection(type: User.self, primaryKey: SocialController.shared.fetchActiveSocialProvider() ?? "Facebook")
+        
+        if let user = user as? User {
+            profile.user = user
+        }
+        
+        self.navigationController?.pushViewController(profile, animated: true)
     }
     
     //MARK: KEYBOARD FUNCTIONS
@@ -111,5 +137,28 @@ extension ChatViewController: TableListable {
         }
         
         return UITableViewCell()
+    }
+}
+
+extension ChatViewController: MenuDelegate {
+    func didTapMenuItem(menuItem: MenuItem) {
+        switch menuItem.menuAction {
+            case "accept":
+                accept()
+            break
+            case "reject":
+                reject()
+            break
+        default:
+            break
+        }
+    }
+    
+    func accept() {
+        self.presentProfile()
+    }
+    
+    func reject() {
+        
     }
 }
