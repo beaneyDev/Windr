@@ -25,7 +25,8 @@ extension SocketIO where Self : WNotifiable {
 //            self.socket = SocketIOClient(socketURL: NSURL(string:"https://murmuring-cliffs-89924.herokuapp.com/")! as URL)
 //        #endif
         
-        self.socket = SocketIOClient(socketURL: NSURL(string:"http://192.168.0.43:3000")! as URL)
+        let ip = (Bundle.main.object(forInfoDictionaryKey: "WindrIP") as? String) ?? "http://192.168.0.43:3000"
+        self.socket = SocketIOClient(socketURL: NSURL(string: ip)! as URL)
         
         addHandlers()
         socket!.connect()

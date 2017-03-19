@@ -42,7 +42,7 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
         configureMessageBox()
         configureSocket()
         configureKeyboardHiding()
-        presentProfile()
+        //presentProfile()
     }
     
     func presentProfile() {

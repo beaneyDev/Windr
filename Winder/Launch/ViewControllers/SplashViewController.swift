@@ -17,6 +17,8 @@ class SplashViewController: UIViewController {
     var topLeft = false
     
     override func viewDidLoad() {
+        self.performSegue(withIdentifier: "loggedIn", sender: nil)
+        return;
         pulse.configureWithColors(primaryColor: UIColor.red, secondaryColor: UIColor.blue, action: nil, pulses: 1)
         pulse.layer.cornerRadius = pulse.frame.size.width / 2.0
         pulse.pulseIndefinitely {
