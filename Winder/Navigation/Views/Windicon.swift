@@ -32,7 +32,7 @@ class Windicon: UIView {
     var windiAction: WindiconAction?
     
     //Action handling
-    func tapped() {
+    @objc func tapped() {
         self.windiAction?()
     }
     

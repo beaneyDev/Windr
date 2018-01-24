@@ -55,7 +55,7 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
             profile.user = user
         }
 
-        self.navigationController?.pushViewController(profile, animated: true)
+        //self.navigationController?.pushViewController(profile, animated: true)
     }
     
     //MARK: ACTION HANDLING
@@ -80,7 +80,7 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
         NotificationCenter.default.addObserver(self, selector: #selector(ChatViewController.keyboardWillShow(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
     }
     
-    func keyboardWillShow(notification: Notification) {
+    @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             bottomConstraint.constant = keyboardSize.height
 
@@ -90,7 +90,7 @@ class ChatViewController: UIViewController, ChatBox, SocketIO, WNotifiable {
         }
     }
     
-    func keyboardWillHide(notification: NSNotification) {
+    @objc func keyboardWillHide(notification: NSNotification) {
         bottomConstraint.constant = 0
         UIView.animate(withDuration: 0.3, animations: { 
             self.view.layoutIfNeeded()

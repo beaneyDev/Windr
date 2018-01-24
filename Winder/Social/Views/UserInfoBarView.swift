@@ -40,7 +40,7 @@ class UserInfoBarView: UIView {
         var previousItem: UILabel?
         for (index, textItem) in userInfo.enumerated() {
             let item = UILabel()
-            item.font = UIFont.systemFont(ofSize: 12.0, weight: 0.1)
+            item.font = UIFont.systemFont(ofSize: 12.0, weight: UIFont.Weight(rawValue: 0.1))
             item.alpha = 0.0
             item.numberOfLines = 0
             item.textAlignment = NSTextAlignment.center

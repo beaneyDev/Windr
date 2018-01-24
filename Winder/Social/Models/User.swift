@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 class User: Object {
-    dynamic var socialProvider: String?
-    dynamic var fullName: String?
-    dynamic var id: String?
-    dynamic var imageLink: String?
+    @objc dynamic var socialProvider: String?
+    @objc dynamic var fullName: String?
+    @objc dynamic var id: String?
+    @objc dynamic var imageLink: String?
     var ageRange: RealmOptional<Int> = RealmOptional<Int>()
     
     convenience init(fullName: String, id: String, imageLink: String, ageRange: Int?, socialProvider: String) {

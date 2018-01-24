@@ -33,7 +33,7 @@ class MBTimer: UIView, Timeable {
         self.ticks = time
     }
     
-    func tick() {
+    @objc func tick() {
         
     }
 //    

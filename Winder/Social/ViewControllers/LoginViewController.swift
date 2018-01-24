@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
     
     //MARK: LOGIN FUNCTIONS.
     @IBAction func loginWithTwitter(_ sender: Any) {
-        Twitter.sharedInstance().logIn { session, error in
+        TWTRTwitter.sharedInstance().logIn { session, error in
             if let session = session {
                 self.loadUser(userInfo: ["session": session], socialProvider: TwitterController.shared)
             } else {
